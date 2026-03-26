@@ -1,12 +1,20 @@
-import resumePage from '../../assets/images/resume-page.png'
+import resumePage from "../../assets/images/resume-page.png";
 
 export default function AuthLayout({ children }) {
   return (
-    <div className="grid grid-cols-2 h-screen overflow-hidden ">
-      <div className="flex items-center justify-center">{children}</div>
+    <div className="flex h-screen w-full overflow-hidden">
+      <div className="w-1/2 flex items-center justify-center p-4">
+        <div className="inline-block">{children}</div>
+      </div>
 
-      <div className="">
-        <img src={resumePage} className="w-full  h-full object-cover" />
+      <div className="w-1/2 h-full p-7 pl-0">
+        <div className="w-full h-full overflow-hidden rounded-3xl border border-border">
+          <img
+            src={resumePage}
+            alt="Resume Preview"
+            className="w-full h-full object-cover"
+          />
+        </div>
       </div>
     </div>
   );
