@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import facebookLogo from "@/assets/images/facebook-logo.svg";
+import { Link } from "react-router-dom";
 
 export default function SignIn() {
   const handleSubmit = (e) => {
@@ -14,18 +15,18 @@ export default function SignIn() {
   return (
     <>
       <AuthLayout>
-        <div className="w-full max-w-md">
+        <div className="w-full max-w-84">
           <AuthHeader
             title="Sign in to your account"
             subtitle={
               <span>
                 Not a member?{" "}
-                <a
-                  href="/signup"
+                <Link
+                  to="/signup"
                   className="text-blue-600 hover:underline cursor-pointer"
                 >
                   Sign up
-                </a>
+                </Link>
               </span>
             }
           />
@@ -47,6 +48,7 @@ export default function SignIn() {
               id="email"
               type="email"
               placeholder="Email address"
+              autoComplete="email"
               className="mb-4"
             />
 
@@ -57,15 +59,16 @@ export default function SignIn() {
               id="password"
               type="password"
               placeholder="Password"
+              autoComplete="current-password"
               className="mb-1.25"
             />
 
-            <a
-              href="/forgot-password"
+            <Link
+              to="/forgot-password"
               className="text-sm font-medium leading-5 text-right block text-muted-foreground hover:text-primary hover:underline cursor-pointer mb-8.5"
             >
               Forgot password?
-            </a>
+            </Link>
 
             <Button type="submit" className="w-full" size="lg">
               Sign in

@@ -1,8 +1,8 @@
   import { BrowserRouter, Routes, Route } from "react-router-dom";
   import SignIn from "./components/Pages/signIn";
   import SignUp from "./components/Pages/signUp";
-  import ForgotPassword from "./components/Pages/forgotPassword";
   import Home from "./components/Pages/home";
+import CreateAccount from "./components/Pages/createAccount";
 
   function App() {
     return (
@@ -11,7 +11,7 @@
           <Route path="/" element={<Home />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/create-account" element={<CreateAccount />} />
         </Routes>
       </BrowserRouter>
     );

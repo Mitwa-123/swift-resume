@@ -11,7 +11,7 @@ export default function SignUp() {
   return (
     <>
       <AuthLayout>
-        <div className="w-full max-w-md">
+        <div className="w-full max-w-77.75">
           <AuthHeader
             title="Let’s get started"
             subtitle="Fill in your personal details"
@@ -44,7 +44,7 @@ export default function SignUp() {
               className="mb-8.5"
             />
 
-            <Button type="submit" className="w-full" size="lg">
+            <Button type="submit" className="w-full mb-1.5" size="lg">
               Sign up
             </Button>
           </form>

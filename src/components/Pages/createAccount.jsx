@@ -5,11 +5,11 @@ import facebookLogo from "@/assets/images/facebook-logo.svg";
 import { Separator } from "@/components/ui/separator";
 import mailLogo from "@/assets/images/mail.svg";
 
-export default function ForgotPassword() {
+export default function CreateAccount() {
   return (
     <>
       <AuthLayout>
-        <div className="w-full max-w-md">
+        <div className="w-full max-w-84">
           <AuthHeader
             title="Create an account"
             subtitle="Use LinkedIn for fastest sign up"
@@ -23,12 +23,12 @@ export default function ForgotPassword() {
           <Separator className="my-6.5">
             <span>Or use email</span>
           </Separator>
-        </div>
 
-        <Button type="submit" className="w-full" size="lg">
-          <img src={mailLogo} alt="mail logo" />
-          Continue with email
-        </Button>
+          <Button type="submit" className="w-full" size="lg">
+            <img src={mailLogo} alt="mail logo" />
+            Continue with email
+          </Button>
+        </div>
       </AuthLayout>
     </>
   );
