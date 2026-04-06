@@ -40,7 +40,7 @@ export default function SettingsLayout({ children }) {
         </TabsList>
       </Tabs>
 
-      <div className="mt-10">{children}</div>
+      <div className="mt-9">{children}</div>
     </div>
   );
 }
