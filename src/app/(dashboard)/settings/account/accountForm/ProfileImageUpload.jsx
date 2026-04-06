@@ -18,8 +18,8 @@ import {
 
 export default function ProfileImageUpload({ form }) {
   return (
-    <div className="flex gap-[120px]">
-      <div className="min-w-[250px]">
+    <div className="flex gap-30">
+      <div className="min-w-62.5">
         <h2 className="text-sm font-semibold leading-5">Profile</h2>
         <p className="text-sm text-muted-foreground font-medium leading-5">
           Update your personal details
