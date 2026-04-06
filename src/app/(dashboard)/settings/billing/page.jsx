@@ -1,11 +1,35 @@
-import React from "react";
+"use client";
+
+import SelectedPlan from "./billingForm/SelectedPlan";
+import { currentPlan, otherPlans } from "./data/plansData";
+import { Button } from "@/components/ui/button";
 
 export default function BillingPage() {
   return (
-    <div className="space-y-6">
-      <h2 className="text-xl font-semibold text-[#0F172A]">Billing Details</h2>
+    <div className="space-y-10 p-6">
+      <div>
+        <h2 className="text-sm font-semibold mb-4">Your plan</h2>
 
-        <p className="text-gray-500 font-medium text-lg">Created</p>
+        <div className="max-w-sm">
+          <SelectedPlan {...currentPlan} />
+
+          <div className="mt-3">
+            <Button variant="outline" size="sm">
+              Manage plan
+            </Button>
+          </div>
+        </div>
       </div>
+
+      <div>
+        <h2 className="text-sm font-semibold mb-4">Switch your plan</h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {otherPlans.map((plan, index) => (
+            <SelectedPlan key={index} {...plan} />
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }

@@ -1,8 +1,28 @@
-export default function AccountPage() {
+"use client";
+
+import { useForm } from "react-hook-form";
+import ProfileImageUpload from "./accountForm/ProfileImageUpload";
+import CredentialsSection from "./accountForm/CredentialsSection";
+
+export default function App() {
+  const form = useForm({
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      currentPassword: "",
+      newPassword: "",
+    },
+  });
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
   return (
-    <div className="space-y-6">
-      <h2 className="text-xl font-semibold">Account Details</h2>
-      <p></p>
-    </div>
+    <form onSubmit={form.handleSubmit(onSubmit)}>
+      <ProfileImageUpload form={form} />
+      <CredentialsSection form={form} />
+    </form>
   );
 }

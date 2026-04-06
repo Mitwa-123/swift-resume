@@ -9,7 +9,7 @@ export default function SettingsLayout({ children }) {
   const activeTab = pathname.includes("billing") ? "billing" : "account";
 
   return (
-    <div className="max-w-325 mx-auto px-3">
+    <div className="max-w-325 mx-auto px-10.5">
       <div className="flex items-center gap-1 mb-2.5 pt-5.5">
         <Image
           src="/images/setting-logo.svg"
