@@ -108,10 +108,12 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --color-base-primary: var(--base-primary);
 
 }
 
 :root {
+  --base-primary: #2563EB;
 --text-base-size: 20px;
   --font-sans: 'Open Sans', sans-serif;
   --background: oklch(1 0 0);
@@ -126,8 +128,8 @@
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: #64748B;
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --accent: #F7FAFF;
+  --accent-foreground: #D6E5FF;
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);

@@ -4,8 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Avatar } from "@/components/ui/avatar";
 import { AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Upload } from "lucide-react";
-import { Trash } from "lucide-react";
+import { Upload, Trash } from "lucide-react";
 import * as React from "react";
 import { Controller } from "react-hook-form";
 
@@ -18,23 +17,23 @@ import {
 
 export default function ProfileImageUpload({ form }) {
   return (
-    <div className="flex gap-30">
-      <div className="min-w-62.5">
+    <div className="flex flex-col lg:flex-row gap-6 lg:gap-30">
+      <div className="lg:min-w-62.5">
         <h2 className="text-sm font-semibold leading-5">Profile</h2>
         <p className="text-sm text-muted-foreground font-medium leading-5">
           Update your personal details
         </p>
       </div>
 
-      <div className="flex flex-col  w-full max-w-106.75">
+      <div className="flex flex-col w-full max-w-full lg:max-w-106.75">
         <Label className="text-xs mb-2.5 text-slate-600">Profile Picture</Label>
 
-        <div className="flex items-center gap-5">
-          <Avatar className="w-24 h-24">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5">
+          <Avatar className="w-20 h-20 sm:w-24 sm:h-24">
             <AvatarImage src="/images/profile-avtar.svg" />
           </Avatar>
 
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap">
             <Button variant="change" size="sm">
               <Upload className="w-4 h-4" />
               Change
@@ -47,8 +46,8 @@ export default function ProfileImageUpload({ form }) {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 mt-6">
-          <FieldGroup className="col-span-2 grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+          <FieldGroup className="col-span-1 sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Controller
               name="firstName"
               control={form.control}

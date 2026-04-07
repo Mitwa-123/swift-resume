@@ -29,7 +29,7 @@ export default function DashboardHeader() {
                 priority
               />
             </Link>
-            
+
             <div className="hidden md:block md:h-4 w-px bg-slate-200" />
 
             <nav className="hidden md:flex items-center text-sm gap-2">
@@ -65,9 +65,12 @@ export default function DashboardHeader() {
                   <BreadcrumbSeparator />
 
                   <BreadcrumbItem>
-                    <BreadcrumbPage className="font-medium text-xs leading-none">
+                    <Link
+                      href="/settings/account"
+                      className="font-medium text-xs leading-none"
+                    >
                       Untitled resume
-                    </BreadcrumbPage>
+                    </Link>
                   </BreadcrumbItem>
                 </BreadcrumbList>
               </Breadcrumb>

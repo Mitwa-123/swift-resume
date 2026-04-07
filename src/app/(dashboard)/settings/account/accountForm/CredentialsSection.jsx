@@ -15,8 +15,8 @@ import {
 
 export default function CredentialsSection({ form }) {
   return (
-    <div className="flex gap-30 mt-10">
-      <div className="min-w-62.5">
+    <div className="flex flex-col lg:flex-row gap-8 lg:gap-30 mt-10">
+      <div className="lg:min-w-62.5">
         <h2 className="text-sm font-semibold leading-5">Credentials</h2>
         <p className="text-sm text-muted-foreground font-medium leading-5">
           Update how you login to Swift Resume
@@ -25,9 +25,9 @@ export default function CredentialsSection({ form }) {
 
       <div
         onSubmit={form.handleSubmit((data) => console.log(data))}
-        className="flex flex-col w-full max-w-106.75"
+        className="flex flex-col w-full max-w-full lg:max-w-106.75"
       >
-        <FieldGroup className="flex flex-col gap-6.5">
+        <FieldGroup className="flex flex-col gap-5 sm:gap-6.5">
           <Controller
             name="email"
             control={form.control}
@@ -91,7 +91,7 @@ export default function CredentialsSection({ form }) {
           />
         </FieldGroup>
 
-        <div className="flex justify-start mt-10">
+        <div className="flex justify-start mt-8 sm:mt-10 mb-4 sm:mb-0" >
           <button
             type="submit"
             className="flex items-center gap-1.5 bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium"
