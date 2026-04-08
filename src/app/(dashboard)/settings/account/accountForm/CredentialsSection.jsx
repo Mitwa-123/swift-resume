@@ -4,7 +4,8 @@ import * as React from "react";
 import { Controller } from "react-hook-form";
 
 import { Input } from "@/components/ui/input";
-import Image from "next/image";
+import { Save } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 import {
   Field,
@@ -35,7 +36,7 @@ export default function CredentialsSection({ form }) {
             render={({ field, fieldState }) => (
               <Field data-invalid={fieldState.invalid}>
                 <FieldLabel>Email</FieldLabel>
-                <Input {...field} type="email" placeholder="Enter your email" />
+                <Input {...field} type="email" />
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
                 )}
@@ -56,7 +57,7 @@ export default function CredentialsSection({ form }) {
                 <Input
                   {...field}
                   type="password"
-                  placeholder="Current password"
+                  placeholder="Enter your current password"
                 />
 
                 {fieldState.invalid && (
@@ -81,7 +82,11 @@ export default function CredentialsSection({ form }) {
               <Field data-invalid={fieldState.invalid}>
                 <FieldLabel>New password</FieldLabel>
 
-                <Input {...field} type="password" placeholder="New password" />
+                <Input
+                  {...field}
+                  type="password"
+                  placeholder="Enter your new password"
+                />
 
                 {fieldState.invalid && (
                   <FieldError errors={[fieldState.error]} />
@@ -90,15 +95,14 @@ export default function CredentialsSection({ form }) {
             )}
           />
         </FieldGroup>
-
-        <div className="flex justify-start mt-8 sm:mt-10 mb-4 sm:mb-0" >
-          <button
+        <div className="flex justify-start mt-8">
+          <Button
             type="submit"
-            className="flex items-center gap-1.5 bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium"
+            className="px-4 bg-base-primary hover:bg-base-primary/90"
           >
-            <Image src="/images/save.svg" alt="save" width={16} height={16} />
+            <Save className="w-4 h-4" />
             Save
-          </button>
+          </Button>
         </div>
       </div>
     </div>

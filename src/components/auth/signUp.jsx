@@ -1,5 +1,4 @@
 "use client";
-import AuthLayout from "@/components/auth/AuthLayout";
 import AuthHeader from "@/components/auth/AuthHeader";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -41,7 +40,6 @@ export default function SignUp() {
   };
   return (
     <>
-      <AuthLayout>
         <div className="w-full max-w-77.75">
           <AuthHeader
             title="Let’s get started"
@@ -105,7 +103,6 @@ export default function SignUp() {
             </FieldGroup>
           </form>
         </div>
-      </AuthLayout>
     </>
   );
 }

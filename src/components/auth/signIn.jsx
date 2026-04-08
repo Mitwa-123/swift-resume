@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import AuthLayout from "@/components/auth/AuthLayout";
 import AuthHeader from "@/components/auth/AuthHeader";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -35,7 +34,6 @@ export default function SignIn() {
   };
   return (
     <>
-      <AuthLayout>
         <div className="w-full max-w-84">
           <AuthHeader
             title="Sign in to your account"
@@ -115,7 +113,6 @@ export default function SignIn() {
             </FieldGroup>
           </form>
         </div>
-      </AuthLayout>
     </>
   );
 }

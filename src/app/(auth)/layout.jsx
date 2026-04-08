@@ -1,6 +1,6 @@
 "use client";
 
-export default function AuthLayout({ children }) {
+export default function Layout({ children }) {
   return (
     <div className="flex h-screen w-full overflow-hidden">
       <div className="w-1/2 flex items-center justify-center p-4">

@@ -1,6 +1,5 @@
 "use client";
 
-import AuthLayout from "@/components/auth/AuthLayout";
 import AuthHeader from "@/components/auth/AuthHeader";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -8,7 +7,6 @@ import { Separator } from "@/components/ui/separator";
 export default function CreateAccount() {
   return (
     <>
-      <AuthLayout>
         <div className="w-full max-w-84">
           <AuthHeader
             title="Create an account"
@@ -29,7 +27,6 @@ export default function CreateAccount() {
             Continue with email
           </Button>
         </div>
-      </AuthLayout>
     </>
   );
 }

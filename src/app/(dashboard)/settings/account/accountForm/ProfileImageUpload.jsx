@@ -34,12 +34,18 @@ export default function ProfileImageUpload({ form }) {
           </Avatar>
 
           <div className="flex gap-2 flex-wrap">
-            <Button variant="change" size="sm">
+            <Button
+              size="sm"
+              className="border border-border bg-secondary text-primary hover:bg-[#e2e8f0]"
+            >
               <Upload className="w-4 h-4" />
               Change
             </Button>
 
-            <Button variant="change" size="sm">
+            <Button
+              size="sm"
+              className=" border border-border bg-secondary text-black hover:bg-[#e2e8f0]"
+            >
               <Trash className="w-4 h-4" />
               Delete
             </Button>
@@ -56,11 +62,7 @@ export default function ProfileImageUpload({ form }) {
                 <Field data-invalid={fieldState.invalid}>
                   <FieldLabel>First name</FieldLabel>
 
-                  <Input
-                    {...field}
-                    placeholder="Enter first name"
-                    aria-invalid={fieldState.invalid}
-                  />
+                  <Input {...field} aria-invalid={fieldState.invalid} />
 
                   {fieldState.invalid && (
                     <FieldError errors={[fieldState.error]} />
@@ -77,11 +79,7 @@ export default function ProfileImageUpload({ form }) {
                 <Field data-invalid={fieldState.invalid}>
                   <FieldLabel>Last name</FieldLabel>
 
-                  <Input
-                    {...field}
-                    placeholder="Enter last name"
-                    aria-invalid={fieldState.invalid}
-                  />
+                  <Input {...field} aria-invalid={fieldState.invalid} />
 
                   {fieldState.invalid && (
                     <FieldError errors={[fieldState.error]} />

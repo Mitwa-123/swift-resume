@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -11,7 +13,10 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
+import { ChevronDown } from "lucide-react";
 
 export default function DashboardHeader() {
   return (
@@ -31,9 +36,9 @@ export default function DashboardHeader() {
 
             <div className="hidden md:block md:h-4 w-px bg-slate-200" />
 
-            <nav className="hidden md:flex items-center text-sm gap-2">
+            <nav className="hidden md:flex items-center text-sm">
               <Breadcrumb>
-                <BreadcrumbList>
+                <BreadcrumbList className="flex items-center gap-1.5 leading-none">
                   <BreadcrumbItem>
                     <BreadcrumbLink
                       href="/dashboard"
@@ -64,9 +69,7 @@ export default function DashboardHeader() {
                   <BreadcrumbSeparator />
 
                   <BreadcrumbItem>
-                    <div
-                      className="font-medium text-xs leading-none"
-                    >
+                    <div className="font-medium text-xs leading-none">
                       Untitled resume
                     </div>
                   </BreadcrumbItem>
@@ -77,16 +80,31 @@ export default function DashboardHeader() {
 
           <div className="flex items-center gap-2">
             <DropdownMenu>
-              <DropdownMenuTrigger className="cursor-pointer">
-                <img src="/images/dropdown.svg" alt="Language" />
+              <DropdownMenuTrigger >
+                <div className="flex items-center gap-1 cursor-pointer">
+                  <img
+                    src="/images/flag.svg"
+                    alt="Language"
+                    className="w-4 h-4 rounded-full"
+                  />
+                  <ChevronDown className="w-4 h-4 text-muted-foreground" />
+                </div>
               </DropdownMenuTrigger>
+
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem>English</DropdownMenuItem>
+                <DropdownMenuItem>Hindi</DropdownMenuItem>
+                <DropdownMenuItem>Gujarati</DropdownMenuItem>
+              </DropdownMenuContent>
             </DropdownMenu>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="cursor-pointer">
-                <Avatar className="h-7 w-7">
-                  <AvatarImage src="/images/avatar.svg" alt="User" />
-                </Avatar>
+              <DropdownMenuTrigger >
+                <div className="cursor-pointer">
+                  <Avatar className="h-7.5 w-7.5">
+                    <AvatarImage src="/images/avatar.svg" alt="User" />
+                  </Avatar>
+                </div>
               </DropdownMenuTrigger>
             </DropdownMenu>
           </div>

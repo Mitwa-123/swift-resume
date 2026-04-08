@@ -13,14 +13,14 @@ export default function SelectedPlan({
 }) {
   return (
     <Card
-      className={`rounded-xl border p-4 ${
-        active ? "border-blue-600 ring-2 ring-blue-500" : ""
+      className={`rounded-xl border p-5 ${
+        active ? "border-base-primary ring-1 ring-base-primary" : ""
       }`}
     >
-      <CardContent className="p-0 space-y-2.5">
-        <div className="flex justify-between items-center ">
+      <CardContent className="p-0">
+        <div className="flex justify-between items-center mb-2.5">
           {active ? (
-            <div className="bg-blue-600 text-white p-1 rounded-full">
+            <div className="bg-base-primary text-white  rounded-full">
               <Check size={20} />
             </div>
           ) : (
@@ -32,9 +32,9 @@ export default function SelectedPlan({
           </p>
         </div>
 
-        <h3 className="font-semibold text-base leading-6">{title}</h3>
+        <h3 className="font-semibold text-base leading-6 mb-2.5">{title}</h3>
 
-        <ul className="list-disc pl-5 text-xs text-primary leading-4 font-medium space-y-2">
+        <ul className="list-disc pl-5 mb-5 text-xs text-primary leading-4 font-medium space-y-2">
           {features.map((item, i) => (
             <li key={i}>{item}</li>
           ))}
