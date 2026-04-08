@@ -6,7 +6,7 @@ export default function ResumePreview() {
       alt="resume preview"
       width={262}
       height={154}
-      className="w-full max-w-[262px] mx-auto "
+      className="w-full max-w-65.5 mx-auto "
     />
   );
 }

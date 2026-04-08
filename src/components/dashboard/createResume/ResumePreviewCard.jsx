@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function ResumePreviewCard({ className = "" }) {
+export default function ResumePreviewCard() {
   return (
     <div className={`shrink-0`}>
       <Image

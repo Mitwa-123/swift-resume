@@ -5,7 +5,6 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
-  BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
@@ -65,12 +64,11 @@ export default function DashboardHeader() {
                   <BreadcrumbSeparator />
 
                   <BreadcrumbItem>
-                    <Link
-                      href="/settings/account"
+                    <div
                       className="font-medium text-xs leading-none"
                     >
                       Untitled resume
-                    </Link>
+                    </div>
                   </BreadcrumbItem>
                 </BreadcrumbList>
               </Breadcrumb>

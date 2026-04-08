@@ -7,8 +7,6 @@ export default function RecentResumeCard({ image }) {
     <Card className="hover:shadow-md transition">
       <CardContent>
         <ResumePreview image={image} />
-
-        {/* Footer box */}
         <div className=" bg-muted/30 rounded-lg p-4">
           <ResumeCardFooter />
         </div>

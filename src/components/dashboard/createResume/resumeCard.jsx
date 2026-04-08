@@ -23,8 +23,7 @@ export default function ResumeCard() {
             bg-linear-to-b from-accent-foreground via-accent to-card
             shadow-lg
             pt-7    px-3        
-            flex flex-col justify-between
-  "
+            flex flex-col justify-between"
           >
             <CardContent className="flex  justify-center ">
               <Image

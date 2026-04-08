@@ -27,14 +27,15 @@ export default function ResumeTabs() {
         </TabsList>
       </Tabs>
 
-      <Button
-        size="sm"
-        className="bg-base-primary hover:bg-base-primary/90 px-2 sm:px-4"
-      >
-        <Plus />
-
-        <span className="hidden sm:inline">Create resume</span>
-      </Button>
+      <Link href="/resumes/create-resume"> 
+        <Button
+          size="sm"
+          className="bg-base-primary hover:bg-base-primary/90 px-2 sm:px-4"
+        >
+          <Plus />
+          <span className="hidden sm:inline">Create resume</span>
+        </Button>
+      </Link>
     </div>
   );
 }

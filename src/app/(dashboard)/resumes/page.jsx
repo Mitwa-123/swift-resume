@@ -1,10 +1,9 @@
-import ResumeState from "@/components/dashboard/createResume/resumeState";
-import ResumeTabs from "@/components/dashboard/createResume/ResumeTabs";
+import ResumeContainer from "@/components/dashboard/resumeCard/ResumeContainer";
 
-export default function ResumePage() {
+export default function CreateResumePage() {
   return (
-    <>
-      <ResumeState />
-    </>
+    <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <ResumeContainer />
+    </div>
   );
 }

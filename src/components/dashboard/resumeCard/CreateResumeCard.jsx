@@ -1,18 +1,35 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function CreateResumeCard() {
   return (
-    <Card className="border-2 border-blue-500 rounded-xl flex items-center justify-center">
-      <CardContent className="flex flex-col items-center justify-center h-[220px] gap-4">
-        <div className="w-full h-[100px] bg-gray-100 rounded-md" />
+    <div className="relative z-10">
+      <Card className=" h-57.5 shrink-0 rounded-xl border-2 border-blue-500 bg-gradient-to-b from-accent-foreground via-accent to-card shadow-lg flex flex-col items-center relative pt-0 px-0 ">
+        <CardContent className="flex  justify-center mt-7">
+          <Image
+            src="/images/create-resume.svg"
+            alt="Create resume"
+            width={204}
+            height={226}
+            className="object-contain opacity-90"
+          />
 
-        <Button className="bg-blue-600 hover:bg-blue-700 text-white gap-2">
-          <Plus size={16} />
-          Create resume
-        </Button>
-      </CardContent>
-    </Card>
+          <div className="absolute bottom-6 left-7 right-7 flex justify-center z-20">
+            <Link href="/resumes/create-resume">
+              <Button
+                size="sm"
+                className="gap-2 px-3 h-7 bg-base-primary hover:bg-blue-700"
+              >
+                <Plus />
+                Create resume
+              </Button>
+            </Link>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
   );
 }
