@@ -14,28 +14,43 @@ export default function ResumeTabs() {
     : "resumes";
 
   return (
-    <div className="flex items-center justify-between border-b">
+    <div className="flex justify-between h-13.75">
       <Tabs value={activeTab}>
-        <TabsList variant="line" className="gap-6">
+        <TabsList
+          variant="line"
+          className="gap-6 h-full p-0 items-end border-0"
+        >
           <Link href="/resumes">
-            <TabsTrigger value="resumes">Resumes</TabsTrigger>
+            <TabsTrigger
+              value="resumes"
+              className="font-medium text-sm leading-none "
+            >
+              Resumes
+            </TabsTrigger>
           </Link>
 
           <Link href="/cover-letters">
-            <TabsTrigger value="cover-letters">Cover letters</TabsTrigger>
+            <TabsTrigger
+              value="cover-letters"
+              className="font-medium text-sm leading-none"
+            >
+              Cover letters
+            </TabsTrigger>
           </Link>
         </TabsList>
       </Tabs>
 
-      <Link href="/resumes/create-resume"> 
-        <Button
-          size="sm"
-          className="bg-base-primary hover:bg-base-primary/90 px-2 sm:px-4"
-        >
-          <Plus />
-          <span className="hidden sm:inline">Create resume</span>
-        </Button>
-      </Link>
+      <div className="flex items-center">
+        <Link href="/resumes/create-resume">
+          <Button
+            size="sm"
+            className="bg-base-primary hover:bg-base-primary/90 px-2 sm:px-3"
+          >
+            <Plus />
+            <span className="hidden sm:inline">Create resume</span>
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 }

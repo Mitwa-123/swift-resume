@@ -17,7 +17,7 @@ export default function ResumeCard() {
         <div className="relative z-10">
           <Card
             className="
-            w-66  shrink-0
+            w-66 shrink-0
             rounded-xl
             border-2 border-blue-500
             bg-linear-to-b from-accent-foreground via-accent to-card
@@ -31,14 +31,14 @@ export default function ResumeCard() {
                 alt="Create resume"
                 width={204}
                 height={245}
-                className="object-contain opacity-90"
+                className="object-contain opacity-90 h-58.25"
               />
 
               <div className="absolute bottom-14 left-7 right-7 flex justify-center z-20">
                 <Link href="/resumes/create-resume">
                   <Button
                     size="sm"
-                    className="gap-2 px-3 h-7 bg-base-primary hover:bg-blue-700"
+                    className="gap-1 px-3 h-7 bg-base-primary hover:bg-blue-700"
                   >
                     <Plus />
                     Create resume

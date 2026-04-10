@@ -3,6 +3,7 @@
 import AuthHeader from "@/components/auth/AuthHeader";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
 
 export default function CreateAccount() {
   return (
@@ -14,7 +15,7 @@ export default function CreateAccount() {
           />
 
           <Button variant="outline" size="lg">
-            <img src="/images/facebook-logo.svg" alt="facebook logo" />
+        <Image src="/images/facebook-logo.svg" height={16} width={16}  alt="facebook logo" />
             Sign in with Facebook
           </Button>
 
@@ -23,7 +24,7 @@ export default function CreateAccount() {
           </Separator>
 
           <Button type="submit" className="w-full" size="lg">
-            <img src="/images/mail.svg" alt="mail logo" />
+             <Image src="/images/mail.svg" height={16} width={16}  alt="mail logo" />
             Continue with email
           </Button>
         </div>

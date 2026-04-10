@@ -34,7 +34,11 @@ export default function SelectedPlan({
 
         <h3 className="font-semibold text-base leading-6 mb-2.5">{title}</h3>
 
-        <ul className="list-disc pl-5 mb-5 text-xs text-primary leading-4 font-medium space-y-2">
+        <ul
+          className={`list-disc pl-5 text-xs text-primary leading-4 font-medium space-y-2 ${
+            !active ? "mb-5" : ""
+          }`}
+        >
           {features.map((item, i) => (
             <li key={i}>{item}</li>
           ))}

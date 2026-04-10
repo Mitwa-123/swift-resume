@@ -14,6 +14,7 @@ import {
   FieldError,
   FieldGroup,
 } from "@/components/ui/field";
+import Image from "next/image";
 
 const signInSchema = z.object({
   email: z.string().min(1, "Email is required").email("Invalid email address"),
@@ -50,7 +51,7 @@ export default function SignIn() {
             }
           />
           <Button variant="outline" size="lg">
-            <img src="/images/facebook-logo.svg" alt="facebook logo" />
+           <Image src="/images/facebook-logo.svg" height={16} width={16} alt="facebook logo" />
             Sign in with Facebook
           </Button>
           <Separator className="my-6.5">

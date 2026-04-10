@@ -38,7 +38,7 @@ export default function ProfileImageUpload({ form }) {
               size="sm"
               className="border border-border bg-secondary text-primary hover:bg-[#e2e8f0]"
             >
-              <Upload className="w-4 h-4" />
+              <Upload />
               Change
             </Button>
 
@@ -46,7 +46,7 @@ export default function ProfileImageUpload({ form }) {
               size="sm"
               className=" border border-border bg-secondary text-black hover:bg-[#e2e8f0]"
             >
-              <Trash className="w-4 h-4" />
+              <Trash />
               Delete
             </Button>
           </div>

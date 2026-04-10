@@ -9,7 +9,7 @@ export default function SettingsLayout({ children }) {
   const activeTab = pathname.includes("billing") ? "billing" : "account";
 
   return (
-    <div className="max-w-full lg:max-w-325 mx-auto px-4 sm:px-5 lg:px-10.5 font-open-sans">
+    <div className="max-w-full lg:max-w-325 mx-auto px-4 sm:px-5 lg:px-10.5 Geist">
       <div className="flex items-center gap-2 sm:gap-1 mb-1 sm:mb-2.5 pt-4 sm:pt-5.5">
         <Image
           src="/images/setting-logo.svg"
@@ -23,27 +23,32 @@ export default function SettingsLayout({ children }) {
           Settings
         </h1>
       </div>
-
-      <Tabs value={activeTab} className="w-full">
-        <TabsList
-          variant="line"
-          className="flex w-full overflow-x-auto no-scrollbar"
-        >
-          <Link
-            href="/settings/account"
-            className="text-sm leading-none font-medium whitespace-nowrap"
+      <div className="flex justify-between border-b h-[55px]">
+        <Tabs value={activeTab} className="w-full">
+          <TabsList
+            variant="line"
+            className="gap-6 h-full p-0 items-end border-0"
           >
-            <TabsTrigger value="account">Account</TabsTrigger>
-          </Link>
+            <Link href="/settings/account">
+              <TabsTrigger
+                value="account"
+                className="font-medium text-sm leading-none"
+              >
+                Account
+              </TabsTrigger>
+            </Link>
 
-          <Link
-            href="/settings/billing"
-            className="text-sm leading-none font-medium whitespace-nowrap"
-          >
-            <TabsTrigger value="billing">Billing</TabsTrigger>
-          </Link>
-        </TabsList>
-      </Tabs>
+            <Link href="/settings/billing">
+              <TabsTrigger
+                value="billing"
+                className="font-medium text-sm leading-none"
+              >
+                Billing
+              </TabsTrigger>
+            </Link>
+          </TabsList>
+        </Tabs>
+      </div>
 
       <div className="mt-6 sm:mt-9">{children}</div>
     </div>
