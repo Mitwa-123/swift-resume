@@ -19,7 +19,7 @@ export default function CreateResumeCard() {
 
           <div className="absolute bottom-6 left-7 right-7 flex justify-center z-20">
             <Link href="/resumes/create-resume">
-              <Button size="sm" className="bg-base-primary hover:bg-blue-700">
+              <Button size="sm" variant="default">
                 <Plus />
                 Create resume
               </Button>

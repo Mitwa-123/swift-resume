@@ -6,12 +6,7 @@ export default function SectionContent({ title, type }) {
     <>
       <div className="flex items-center justify-between pb-5">
         <h2 className="text-lg font-medium leading-7 text-foreground pt-5.5 ">
-          {title}{" "}
-          {type === "all" && (
-            <Badge className="h-5 px-1 text-xs rounded-md bg-muted text-foreground">
-              10
-            </Badge>
-          )}
+          {title} {type === "all" && <Badge variant="default">10</Badge>}
         </h2>
       </div>
 

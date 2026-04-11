@@ -9,6 +9,7 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { usePathname } from "next/navigation";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -19,6 +20,12 @@ import {
 import { ChevronDown } from "lucide-react";
 
 export default function DashboardHeader() {
+  const pathname = usePathname();
+  const routeMap = {
+    "/settings/account": "Account",
+    "/settings/billing": "Billing",
+  };
+  const pageTitle = routeMap[pathname] || "Untitled resume";
   return (
     <div className="w-full border-b border-slate-200">
       <div className="max-w-325 mx-auto px-3">
@@ -69,9 +76,7 @@ export default function DashboardHeader() {
                   <BreadcrumbSeparator />
 
                   <BreadcrumbItem>
-                    <div className="font-medium text-xs leading-none">
-                      Untitled resume
-                    </div>
+                    <div className="font-medium text-xs leading-none">{pageTitle}</div>
                   </BreadcrumbItem>
                 </BreadcrumbList>
               </Breadcrumb>
@@ -80,7 +85,7 @@ export default function DashboardHeader() {
 
           <div className="flex items-center gap-2">
             <DropdownMenu>
-              <DropdownMenuTrigger >
+              <DropdownMenuTrigger>
                 <div className="flex items-center gap-1 cursor-pointer">
                   <img
                     src="/images/flag.svg"
@@ -99,7 +104,7 @@ export default function DashboardHeader() {
             </DropdownMenu>
 
             <DropdownMenu>
-              <DropdownMenuTrigger >
+              <DropdownMenuTrigger>
                 <div className="cursor-pointer">
                   <Avatar className="h-7.5 w-7.5">
                     <AvatarImage src="/images/avatar.svg" alt="User" />

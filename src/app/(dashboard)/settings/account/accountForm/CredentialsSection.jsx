@@ -16,7 +16,7 @@ import {
 
 export default function CredentialsSection({ form }) {
   return (
-    <div className="flex flex-col lg:flex-row gap-8 lg:gap-30 mt-10">
+    <div className="flex flex-col lg:flex-row gap-8 lg:gap-30 mt-12.5">
       <div className="lg:min-w-62.5">
         <h2 className="text-sm font-semibold leading-5">Credentials</h2>
         <p className="text-sm text-muted-foreground font-medium leading-5">
@@ -26,9 +26,9 @@ export default function CredentialsSection({ form }) {
 
       <div
         onSubmit={form.handleSubmit((data) => console.log(data))}
-        className="flex flex-col w-full max-w-full lg:max-w-106.75"
+        className="flex flex-col w-full lg:max-w-106.75"
       >
-        <FieldGroup className="flex flex-col gap-5 sm:gap-6.5">
+        <FieldGroup className="flex flex-col">
           <Controller
             name="email"
             control={form.control}
@@ -95,12 +95,9 @@ export default function CredentialsSection({ form }) {
             )}
           />
         </FieldGroup>
-        <div className="flex justify-start mt-8">
-          <Button
-            type="submit"
-            className="px-4 bg-base-primary hover:bg-base-primary/90"
-          >
-            <Save className="w-4 h-4" />
+        <div className="flex justify-start mt-12.5">
+          <Button variant="default" size="default">
+            <Save />
             Save
           </Button>
         </div>

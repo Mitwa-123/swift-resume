@@ -23,7 +23,7 @@ export default function SettingsLayout({ children }) {
           Settings
         </h1>
       </div>
-      <div className="flex justify-between border-b h-[55px]">
+      <div className="flex justify-between border-b h-13.75">
         <Tabs value={activeTab} className="w-full">
           <TabsList
             variant="line"

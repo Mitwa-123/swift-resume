@@ -9,7 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function ResumeCard() {
   return (
-    <div className="mt-10 w-full overflow-hidden">
+    <div className="mt-7.5 w-full overflow-hidden">
       <div className="flex items-center justify-center gap-17.5">
         <ResumePreviewCard className="opacity-30 scale-90" />
         <ResumePreviewCard className="opacity-60 scale-95" />
@@ -38,7 +38,7 @@ export default function ResumeCard() {
                 <Link href="/resumes/create-resume">
                   <Button
                     size="sm"
-                    className="gap-1 px-3 h-7 bg-base-primary hover:bg-blue-700"
+                    variant="default"
                   >
                     <Plus />
                     Create resume

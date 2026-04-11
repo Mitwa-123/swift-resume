@@ -40,56 +40,22 @@ export default function SignUp() {
   };
   return (
     <>
-        <div className="w-full max-w-77.75">
-          <AuthHeader
-            title="Let’s get started"
-            subtitle="Fill in your personal details"
-          />
+      <div className="w-full max-w-77.75 ">
+        <AuthHeader
+          title="Let’s get started"
+          subtitle="Fill in your personal details"
+        />
 
-          <form onSubmit={form.handleSubmit(onSubmit)}>
-            <FieldGroup className="flex flex-col gap-4">
-              <div className="flex gap-2.5">
-                <Controller
-                  name="firstName"
-                  control={form.control}
-                  render={({ field, fieldState }) => (
-                    <Field className="flex-1" data-invalid={fieldState.invalid}>
-                      <FieldLabel htmlFor="firstName">First name</FieldLabel>
-                      <Input {...field} id="firstName" placeholder="Ben" />
-                      {fieldState.invalid && (
-                        <FieldError errors={[fieldState.error]} />
-                      )}
-                    </Field>
-                  )}
-                />
-
-                <Controller
-                  name="lastName"
-                  control={form.control}
-                  render={({ field, fieldState }) => (
-                    <Field className="flex-1" data-invalid={fieldState.invalid}>
-                      <FieldLabel htmlFor="lastName">Last name</FieldLabel>
-                      <Input {...field} id="lastName" placeholder="Caldwell" />
-                      {fieldState.invalid && (
-                        <FieldError errors={[fieldState.error]} />
-                      )}
-                    </Field>
-                  )}
-                />
-              </div>
-
+        <form onSubmit={form.handleSubmit(onSubmit)}>
+          <FieldGroup className="flex flex-col gap-3.5">
+            <div className="flex gap-2.5">
               <Controller
-                name="email"
+                name="firstName"
                 control={form.control}
                 render={({ field, fieldState }) => (
-                  <Field data-invalid={fieldState.invalid}>
-                    <FieldLabel htmlFor="email">Email</FieldLabel>
-                    <Input
-                      {...field}
-                      id="email"
-                      type="email"
-                      placeholder="Email address"
-                    />
+                  <Field className="flex-1" data-invalid={fieldState.invalid}>
+                    <FieldLabel htmlFor="firstName">First name</FieldLabel>
+                    <Input {...field} id="firstName" placeholder="Ben" />
                     {fieldState.invalid && (
                       <FieldError errors={[fieldState.error]} />
                     )}
@@ -97,12 +63,46 @@ export default function SignUp() {
                 )}
               />
 
-              <Button type="submit" className="w-full mt-4" size="lg">
-                Sign up
-              </Button>
-            </FieldGroup>
-          </form>
-        </div>
+              <Controller
+                name="lastName"
+                control={form.control}
+                render={({ field, fieldState }) => (
+                  <Field className="flex-1" data-invalid={fieldState.invalid}>
+                    <FieldLabel htmlFor="lastName">Last name</FieldLabel>
+                    <Input {...field} id="lastName" placeholder="Caldwell" />
+                    {fieldState.invalid && (
+                      <FieldError errors={[fieldState.error]} />
+                    )}
+                  </Field>
+                )}
+              />
+            </div>
+
+            <Controller
+              name="email"
+              control={form.control}
+              render={({ field, fieldState }) => (
+                <Field data-invalid={fieldState.invalid}>
+                  <FieldLabel htmlFor="email">Email</FieldLabel>
+                  <Input
+                    {...field}
+                    id="email"
+                    type="email"
+                    placeholder="Email address"
+                  />
+                  {fieldState.invalid && (
+                    <FieldError errors={[fieldState.error]} />
+                  )}
+                </Field>
+              )}
+            />
+          </FieldGroup>
+
+          <Button type="submit" variant="default" size="default" className="w-full mt-8.5">
+            Sign up
+          </Button>
+        </form>
+      </div>
     </>
   );
 }

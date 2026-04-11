@@ -44,7 +44,7 @@ export default function ResumeTabs() {
         <Link href="/resumes/create-resume">
           <Button
             size="sm"
-            className="bg-base-primary hover:bg-base-primary/90 px-2 sm:px-3"
+            variant="default"
           >
             <Plus />
             <span className="hidden sm:inline">Create resume</span>

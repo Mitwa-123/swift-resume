@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export default function BillingPage() {
   return (
-    <div className="space-y-10 ">
+    <div className="space-y-15.5">
       <div>
         <h2 className="text-sm font-semibold mb-5">Your plan</h2>
 

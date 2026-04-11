@@ -36,7 +36,7 @@ export default function ProfileImageUpload({ form }) {
           <div className="flex gap-2 flex-wrap">
             <Button
               size="sm"
-              className="border border-border bg-secondary text-primary hover:bg-[#e2e8f0]"
+              variant="secondary"
             >
               <Upload />
               Change
@@ -44,7 +44,7 @@ export default function ProfileImageUpload({ form }) {
 
             <Button
               size="sm"
-              className=" border border-border bg-secondary text-black hover:bg-[#e2e8f0]"
+              variant="outline"
             >
               <Trash />
               Delete
@@ -61,9 +61,7 @@ export default function ProfileImageUpload({ form }) {
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
                   <FieldLabel>First name</FieldLabel>
-
                   <Input {...field} aria-invalid={fieldState.invalid} />
-
                   {fieldState.invalid && (
                     <FieldError errors={[fieldState.error]} />
                   )}
@@ -78,9 +76,7 @@ export default function ProfileImageUpload({ form }) {
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
                   <FieldLabel>Last name</FieldLabel>
-
                   <Input {...field} aria-invalid={fieldState.invalid} />
-
                   {fieldState.invalid && (
                     <FieldError errors={[fieldState.error]} />
                   )}
