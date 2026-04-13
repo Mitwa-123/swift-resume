@@ -98,7 +98,7 @@ export default function SignUp() {
             />
           </FieldGroup>
 
-          <Button type="submit" variant="default" size="default" className="w-full mt-8.5">
+          <Button type="submit" className="w-full mt-8.5">
             Sign up
           </Button>
         </form>

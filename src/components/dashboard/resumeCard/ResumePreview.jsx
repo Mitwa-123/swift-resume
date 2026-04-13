@@ -4,13 +4,13 @@ import { MoreVertical } from "lucide-react";
 export default function ResumePreview() {
   return (
     <>
-      <div className="flex justify-center px-1.5 pt-1.5">
+      <div className="flex justify-center px-1.5 pt-2.5">
         <Image
           src="/images/recent-resume-card.svg"
           width={262}
           height={154}
           alt="resume"
-          className="border border-border rounded-sm shadow-sm"
+          className="border border-border rounded-sm shadow-[0_1px_2px_0_rgba(0,0,0,0.04)]"
         />
       </div>
       <div className="flex items-center justify-between p-4">

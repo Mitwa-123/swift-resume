@@ -30,8 +30,6 @@ export default function CreateAccount() {
 
         <Button
           type="submit"
-          variant="default"
-          size="default"
           className="w-full"
         >
           <Image

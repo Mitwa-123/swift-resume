@@ -22,7 +22,7 @@ export default function ResumeCard() {
             border-2 border-blue-500
             bg-linear-to-b from-accent-foreground via-accent to-card
             shadow-lg
-            pt-7    px-3        
+            pt-7 px-3        
             flex flex-col justify-between"
           >
             <CardContent className="flex  justify-center ">
@@ -38,7 +38,6 @@ export default function ResumeCard() {
                 <Link href="/resumes/create-resume">
                   <Button
                     size="sm"
-                    variant="default"
                   >
                     <Plus />
                     Create resume

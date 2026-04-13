@@ -96,7 +96,7 @@ export default function CredentialsSection({ form }) {
           />
         </FieldGroup>
         <div className="flex justify-start mt-12.5">
-          <Button variant="default" size="default">
+          <Button >
             <Save />
             Save
           </Button>

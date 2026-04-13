@@ -18,12 +18,10 @@ export default function ResumeTabs() {
       <Tabs value={activeTab}>
         <TabsList
           variant="line"
-          className="gap-6 h-full p-0 items-end border-0"
         >
           <Link href="/resumes">
             <TabsTrigger
               value="resumes"
-              className="font-medium text-sm leading-none "
             >
               Resumes
             </TabsTrigger>
@@ -32,7 +30,6 @@ export default function ResumeTabs() {
           <Link href="/cover-letters">
             <TabsTrigger
               value="cover-letters"
-              className="font-medium text-sm leading-none"
             >
               Cover letters
             </TabsTrigger>

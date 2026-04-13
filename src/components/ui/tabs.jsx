@@ -24,7 +24,7 @@ const tabsListVariants = cva(
     variants: {
       variant: {
         default: "bg-muted p-[3px]",
-        line: "gap-[24px] bg-transparent border-b border-[#E2E8F0] w-full justify-start",
+        line: "gap-6 bg-transparent  border-[#E2E8F0] w-full justify-start",
       },
     },
     defaultVariants: {
@@ -49,18 +49,14 @@ function TabsTrigger({ className, ...props }) {
     <TabsPrimitive.Tab
       data-slot="tabs-trigger"
       className={cn(
-        // Base Classes
-        "relative inline-flex items-center justify-center gap-1.5 pb-[20.5px] pt-[20.5px] px-1  text-sm font-medium whitespace-nowrap transition-all outline-none disabled:pointer-events-none disabled:opacity-50",
+        "relative inline-flex items-center justify-center gap-1.5 py-[20.5px] px-1  text-sm font-medium leading-none whitespace-nowrap transition-all outline-none disabled:pointer-events-none disabled:opacity-50",
+        "group-data-[variant=line]/tabs-list:bg-transparent group-data-[variant=line]/tabs-list:text-muted-foreground group-data-[variant=line]/tabs-list:data-active:text-base-primary",
+        "group-data-[color=black]/tabs-list:data-[state=active]:text-black cursor-pointer",
 
-        // Line Variant Specific Styles (Figma Match)
-        "group-data-[variant=line]/tabs-list:bg-transparent group-data-[variant=line]/tabs-list:text-[#64748B] group-data-[variant=line]/tabs-list:data-[active]:text-[#2563EB]",
+        "after:absolute after:bottom-0 after:inset-x-0 after:h-0.5 after:bg-base-primary after:opacity-0 after:transition-opacity",
+        "group-data-[variant=line]/tabs-list:data-active:after:opacity-100",
 
-        // The Blue Line (After element)
-        "after:absolute after:bottom-0 after:inset-x-0 after:h-[2px] after:bg-[#2563EB] after:opacity-0 after:transition-opacity",
-        "group-data-[variant=line]/tabs-list:data-[active]:after:opacity-100",
-
-        // Default Variant Styles (Keeping them safe)
-        "group-data-[variant=default]/tabs-list:px-3 group-data-[variant=default]/tabs-list:py-1.5 group-data-[variant=default]/tabs-list:rounded-md group-data-[variant=default]/tabs-list:data-[active]:bg-background group-data-[variant=default]/tabs-list:data-[active]:text-foreground group-data-[variant=default]/tabs-list:data-[active]:shadow-sm",
+        "group-data-[variant=default]/tabs-list:px-3 group-data-[variant=default]/tabs-list:py-1.5 group-data-[variant=default]/tabs-list:rounded-md group-data-[variant=default]/tabs-list:data-active:bg-background group-data-[variant=default]/tabs-list:data-active:text-foreground group-data-[variant=default]/tabs-list:data-active:shadow-sm",
 
         className,
       )}

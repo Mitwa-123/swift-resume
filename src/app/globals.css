@@ -205,4 +205,9 @@
 .font-cabinet {
   font-family: 'Cabinet Grotesk', sans-serif;
 }
-
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
