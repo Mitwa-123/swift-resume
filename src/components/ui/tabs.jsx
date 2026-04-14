@@ -10,7 +10,7 @@ function Tabs({ className, orientation = "horizontal", ...props }) {
       data-slot="tabs"
       data-orientation={orientation}
       className={cn(
-        "group/tabs flex gap-2 data-[orientation=horizontal]:flex-col",
+        "group/tabs flex gap-2 ",
         className,
       )}
       {...props}
@@ -24,7 +24,8 @@ const tabsListVariants = cva(
     variants: {
       variant: {
         default: "bg-muted p-[3px]",
-        line: "gap-6 bg-transparent  border-[#E2E8F0] w-full justify-start",
+        line: "gap-6 bg-transparent  border-border w-full justify-start",
+        boxed: "bg-secondary p-1 rounded-lg ",
       },
     },
     defaultVariants: {
@@ -57,6 +58,8 @@ function TabsTrigger({ className, ...props }) {
         "group-data-[variant=line]/tabs-list:data-active:after:opacity-100",
 
         "group-data-[variant=default]/tabs-list:px-3 group-data-[variant=default]/tabs-list:py-1.5 group-data-[variant=default]/tabs-list:rounded-md group-data-[variant=default]/tabs-list:data-active:bg-background group-data-[variant=default]/tabs-list:data-active:text-foreground group-data-[variant=default]/tabs-list:data-active:shadow-sm",
+
+       "group-data-[variant=boxed]/tabs-list:flex-1 group-data-[variant=boxed]/tabs-list:text-center group-data-[variant=boxed]/tabs-list:px-6 group-data-[variant=boxed]/tabs-list:py-1.5 group-data-[variant=boxed]/tabs-list:rounded-sm group-data-[variant=boxed]/tabs-list:text-muted-foreground group-data-[variant=boxed]/tabs-list:data-active:bg-white group-data-[variant=boxed]/tabs-list:data-active:text-black group-data-[variant=boxed]/tabs-list:data-active:shadow-sm leading-5 font-medium",
 
         className,
       )}

@@ -1,29 +1,24 @@
-import { Card } from "@/components/ui/card";
 import Image from "next/image";
+import { Badge } from "../ui/badge";
 
 export default function TemplateCard({ image, title, tags }) {
   return (
-    <Card className="w-full overflow-hidden hover:shadow-md transition rounded-xl">
-      {/* Image */}
-      <div className="relative w-full aspect-[3/4]">
-        <Image src={image} alt={title} fill className="object-cover" />
-      </div>
-
-      {/* Content */}
-      <div className="p-3">
-        <h3 className="text-sm font-medium">{title}</h3>
-
-        <div className="flex gap-2 mt-1 flex-wrap">
-          {tags.map((tag, i) => (
-            <span
-              key={i}
-              className="text-xs px-2 py-0.5 bg-muted rounded-md text-muted-foreground"
-            >
-              {tag}
-            </span>
-          ))}
+    <div className="flex flex-col">
+      <div className="overflow-hidden rounded-lg border border-border hover:shadow-md transition ">
+        <div className="relative w-74.5 h-105.5">
+          <Image src={image} alt={title} fill className="object-cover" />
         </div>
       </div>
-    </Card>
+      <h3 className="text-foreground text-base leading-6 font-semibold mt-3">
+        {title}
+      </h3>
+      <div className="flex gap-1 mt-1.5 flex-wrap">
+        {tags.map((tag, i) => (
+          <Badge key={i} variant="outline">
+            {tag}
+          </Badge>
+        ))}
+      </div>
+    </div>
   );
 }

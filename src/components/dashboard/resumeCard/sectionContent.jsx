@@ -6,7 +6,7 @@ export default function SectionContent({ title, type }) {
     <>
       <div className="flex items-center justify-between pb-5">
         <h2 className="text-lg font-medium leading-7 text-foreground pt-5.5 ">
-          {title} {type === "all" && <Badge>10</Badge>}
+          {title} {type === "all" && <Badge className="h-5 w-5">10</Badge>}
         </h2>
       </div>
 
