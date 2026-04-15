@@ -1,18 +1,27 @@
-import TemplateGrid from "@/components/onboarding/templateGrid";
+"use client";
+
+import { useState } from "react";
 import TemplateTabs from "@/components/onboarding/TemplateTabs";
-import { templates } from "@/components/onboarding/template-data";
+import { templateData } from "@/components/onboarding/template-data";
+import Container from "@/components/container/container";
+import TemplateGrid from "@/components/onboarding/templateGrid";
+
 export default function Page() {
+  const [activeTab, setActiveTab] = useState("all");
+
+  const templates = templateData[activeTab] || [];
+
   return (
     <>
       <div className="w-full border-b">
-        <div className="max-w-325 mx-auto px-4">
-          <TemplateTabs />
-        </div>
+        <Container>
+          <TemplateTabs value={activeTab} onChange={setActiveTab} />
+        </Container>
       </div>
 
-      <div className="max-w-325 mx-auto px-5">
+      <Container>
         <TemplateGrid templates={templates} />
-      </div>
+      </Container>
     </>
   );
 }

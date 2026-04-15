@@ -2,12 +2,12 @@
 
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-export default function TemplateTabs() {
-  const tabClass = "text-xs px-[10px] py-[10px] data-[active]:!text-black";
+export default function TemplateTabs({ value, onChange }) {
+  const tabClass = "text-xs px-2.5 py-2.5 data-[active]:!text-black";
 
   return (
     <div className="w-full">
-      <Tabs defaultValue="all">
+      <Tabs value={value} onValueChange={onChange}>
         <TabsList variant="line" className="overflow-x-auto no-scrollbar gap-0">
           <TabsTrigger value="all" className={tabClass}>
             All

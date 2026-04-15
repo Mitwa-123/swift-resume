@@ -1,15 +1,17 @@
 "use client";
+
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Container from "@/components/container/container"; 
 
 export default function SettingsLayout({ children }) {
   const pathname = usePathname();
   const activeTab = pathname.includes("billing") ? "billing" : "account";
 
   return (
-    <div className="max-w-full lg:max-w-325 mx-auto px-4 sm:px-5 lg:px-10.5 Geist">
+    <Container className="Geist">
       <div className="flex items-center gap-2 sm:gap-1 mb-1 sm:mb-2.5 pt-4 sm:pt-5.5">
         <Image
           src="/images/setting-logo.svg"
@@ -30,27 +32,20 @@ export default function SettingsLayout({ children }) {
             className="gap-6 h-full p-0 items-end border-0"
           >
             <Link href="/settings/account">
-              <TabsTrigger
-                value="account"
-                className="font-medium text-sm leading-none"
-              >
+              <TabsTrigger value="account" className="font-medium text-sm">
                 Account
               </TabsTrigger>
             </Link>
 
             <Link href="/settings/billing">
-              <TabsTrigger
-                value="billing"
-                className="font-medium text-sm leading-none"
-              >
+              <TabsTrigger value="billing" className="font-medium text-sm">
                 Billing
               </TabsTrigger>
             </Link>
           </TabsList>
         </Tabs>
       </div>
-
       <div className="mt-6 sm:mt-9">{children}</div>
-    </div>
+    </Container>
   );
 }

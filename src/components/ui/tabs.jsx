@@ -59,7 +59,7 @@ function TabsTrigger({ className, ...props }) {
 
         "group-data-[variant=default]/tabs-list:px-3 group-data-[variant=default]/tabs-list:py-1.5 group-data-[variant=default]/tabs-list:rounded-md group-data-[variant=default]/tabs-list:data-active:bg-background group-data-[variant=default]/tabs-list:data-active:text-foreground group-data-[variant=default]/tabs-list:data-active:shadow-sm",
 
-       "group-data-[variant=boxed]/tabs-list:flex-1 group-data-[variant=boxed]/tabs-list:text-center group-data-[variant=boxed]/tabs-list:px-6 group-data-[variant=boxed]/tabs-list:py-1.5 group-data-[variant=boxed]/tabs-list:rounded-sm group-data-[variant=boxed]/tabs-list:text-muted-foreground group-data-[variant=boxed]/tabs-list:data-active:bg-white group-data-[variant=boxed]/tabs-list:data-active:text-black group-data-[variant=boxed]/tabs-list:data-active:shadow-sm leading-5 font-medium",
+       "group-data-[variant=boxed]/tabs-list:flex-1 group-data-[variant=boxed]/tabs-list:text-center group-data-[variant=boxed]/tabs-list:px-[12px] group-data-[variant=boxed]/tabs-list:py-1.5 group-data-[variant=boxed]/tabs-list:rounded-sm group-data-[variant=boxed]/tabs-list:text-muted-foreground group-data-[variant=boxed]/tabs-list:data-active:bg-white group-data-[variant=boxed]/tabs-list:data-active:text-black group-data-[variant=boxed]/tabs-list:data-active:shadow-sm leading-5 font-medium",
 
         className,
       )}

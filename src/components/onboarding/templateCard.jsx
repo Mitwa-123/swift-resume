@@ -4,10 +4,8 @@ import { Badge } from "../ui/badge";
 export default function TemplateCard({ image, title, tags }) {
   return (
     <div className="flex flex-col">
-      <div className="overflow-hidden rounded-lg border border-border hover:shadow-md transition ">
-        <div className="relative w-74.5 h-105.5">
+      <div className="overflow-hidden rounded-lg border border-border hover:shadow-md transition relative w-74.5 h-105.5">
           <Image src={image} alt={title} fill className="object-cover" />
-        </div>
       </div>
       <h3 className="text-foreground text-base leading-6 font-semibold mt-3">
         {title}
