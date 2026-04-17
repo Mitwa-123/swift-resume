@@ -1,22 +1,26 @@
-import Container from "@/components/container/container";
-import ResumeLayout from "@/components/editor/ResumeLayout";
+"use client";
+
 import Image from "next/image";
+import ResumePreview from "@/components/editor/ResumePreview";
+import EditorSidebar from "@/components/editor/EditorSidebar";
 
-
-export default function Page() {
+export default function Layout() {
   return (
-    <>
-      <div className="relative flex-auto flex overflow-hidden">
-        <Image
-          src="/images/editor-bg.svg"
-          alt="Editor Background"
-          width={1000}
-          height={1000}
-          className="absolute inset-0 w-full h-full object-cover -z-10"
-          priority
-        />
-        <ResumeLayout />
+    <div className="fixed flex h-screen w-screen ">
+      <Image
+        src="/images/editor-bg.svg"
+        alt="Editor Background"
+        fill
+        className="object-cover -z-10"
+        priority
+      />
+
+      <div className="flex w-full h-full ">
+        <div className="flex-1 min-w-0 ">
+          <ResumePreview />
+        </div>
+        <EditorSidebar />
       </div>
-    </>
+    </div>
   );
 }

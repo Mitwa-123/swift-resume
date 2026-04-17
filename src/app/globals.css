@@ -193,6 +193,7 @@
   }
   html {
     @apply font-sans;
+    
   }
 }
 .text-20 {

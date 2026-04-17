@@ -20,21 +20,20 @@ export default function AppHeader() {
   const pageTitle = routeMap[pathname] || "Untitled resume";
 
   return (
-    <div className="w-full border-b border-slate-200">
+    <div className="border-b border-slate-200">
       <Container>
         <header
           className={`flex items-center justify-between  ${
-            isOnboarding ? "py-[13.5px]" : "py-2"
+            isOnboarding ? "py-[11.6px]" : "py-2"
           }`}
         >
           <div className="flex items-center gap-4">
             <Link href="/dashboard">
               <Image
-                src="/images/swift-logo.svg"
+                src="/images/swift-header-logo.svg"
                 alt="Swift Logo"
                 width={107}
                 height={19}
-                className="h-4.75 w-full"
               />
             </Link>
 

@@ -16,18 +16,20 @@ export default function SectionItem({
   content,
 }) {
   return (
-    <AccordionItem value={value} className="border rounded-xl px-3 bg-white">
-      <AccordionTrigger className="hover:no-underline py-3">
-        <div className="flex items-center gap-3">
-          <GripVertical className="w-4 h-4 text-muted-foreground" />
+    <AccordionItem value={value} >
+      <AccordionTrigger className="hover:no-underline p-4.5">
+        <div className="flex items-center gap-3 ">
+          <GripVertical className="w-5 h-5 text-muted-foreground" />
 
-          <div className="p-2 bg-muted rounded-md">
-            <Icon className="w-4 h-4" />
+          <div className="p-1.5 bg-muted rounded-md">
+            <Icon className="w-5.5 h-5.5" />
           </div>
 
           <div className="text-left">
-            <p className="text-sm font-medium">{title}</p>
-            <p className="text-xs text-muted-foreground">{desc}</p>
+            <p className="text-sm font-medium leading-5 mb-1">{title}</p>
+            <p className="text-xs font-medium text-muted-foreground le\">
+              {desc}
+            </p>
           </div>
         </div>
       </AccordionTrigger>
