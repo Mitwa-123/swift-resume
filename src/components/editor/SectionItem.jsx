@@ -17,7 +17,7 @@ export default function SectionItem({
 }) {
   return (
     <AccordionItem value={value} >
-      <AccordionTrigger className="hover:no-underline p-4.5">
+      <AccordionTrigger className="hover:no-underline p-2.5 sm:p-4.5">
         <div className="flex items-center gap-3 ">
           <GripVertical className="w-5 h-5 text-muted-foreground" />
 

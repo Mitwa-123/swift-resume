@@ -13,7 +13,7 @@ export const RESUME_SECTIONS = [
     title: "Personal details",
     desc: "Your name, summary, image and title",
     icon: User,
-    content: "mitwa",
+    content: "personal details: mitwa gopani",
   },
   {
     value: "experience",

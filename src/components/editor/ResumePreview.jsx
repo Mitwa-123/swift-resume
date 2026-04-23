@@ -16,12 +16,12 @@ export default function ResumePreview() {
     >
       <TabEditor isScrolled={isScrolled} />
 
-      <div className="relative flex justify-center items-start flex-1">
-        <div className="space-y-5 absolute top-0 origin-top scale-[1.68]">
-          <div className="  flex w-148.75 h-dvh bg-white relative overflow-hidden border border-black/5 rounded "></div>
+      <div className="flex flex-1 items-center justify-center">
+        <div className="w-full max-w-245 bg-white overflow-hidden h-dvh">
+          {/*content */}
         </div>
-        <div className="pointer-events-none" />
       </div>
+      <div className="pointer-events-none" />
     </div>
   );
 }
