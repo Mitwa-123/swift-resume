@@ -34,7 +34,7 @@ export default function SignIn() {
     console.log("Form Submitted Data:", data);
   };
   return (
-    // <>
+    
     <div className="w-full max-w-84">
       <AuthHeader
         title="Sign in to your account"
@@ -125,6 +125,5 @@ export default function SignIn() {
         </Button>
       </form>
     </div>
-    // </>
   );
 }

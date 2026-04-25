@@ -32,7 +32,7 @@ const OptionButton = ({
               </Badge>
             )}
           </div>
-          <p className="text-base text-muted-foreground font-normal ">
+          <p className="text-base text-muted-foreground font-normal leading-none">
             {description}
           </p>
         </div>
@@ -46,7 +46,7 @@ const OptionButton = ({
 export default function GetStarted({ onNext }) {
   return (
     <div className="p-6">
-      <h2 className="text-lg font-semibold leading-none mb-1.5 text-slate-900">
+      <h2 className="text-lg font-semibold leading-none mb-1.5">
         Let's get started
       </h2>
       <p className="text-base text-muted-foreground leading-6 mb-4">

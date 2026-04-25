@@ -4,12 +4,12 @@ import React, { useState, useEffect } from "react";
 import { SquarePen, Eye, PanelRightClose } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"; // TabsContent add karyu
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"; 
 import { Accordion } from "@/components/ui/accordion";
 import { Drawer, DrawerContent, DrawerTitle } from "@/components/ui/drawer";
 import SectionItem from "./SectionItem";
 import { useMediaQuery } from "./use-media-query";
-import { RESUME_SECTIONS } from "./editor-data";
+import { RESUME_SECTIONS } from "@/lib/data/editor-data";
 
 export default function EditorSidebar() {
   const [isMounted, setIsMounted] = useState(false);

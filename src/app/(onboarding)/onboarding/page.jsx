@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import TemplateTabs from "@/components/onboarding/TemplateTabs";
-import { templateData } from "@/components/onboarding/template-data";
-import Container from "@/components/container/container";
+import { templateData } from "@/lib/data/template-data"; 
 import TemplateGrid from "@/components/onboarding/templateGrid";
+import Container from "@/components/container/container";
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState("all");
