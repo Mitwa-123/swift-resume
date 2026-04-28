@@ -13,6 +13,7 @@ import {
   FieldError,
   FieldGroup,
 } from "@/components/ui/field";
+import DialogHeader from "./DialogHeader";
 
 const userInfoSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -34,30 +35,12 @@ export default function UserInfoStep({ onBack, onNext }) {
   };
 
   return (
-    <div className="relative p-6 flex flex-col items-center text-center gap-4">
-      <div className="flex p-2.5 items-center justify-center rounded-xl bg-blue-50 border border-blue-100">
-        <Sparkles className="size-4.5 text-blue-600" />
-      </div>
-
-      <div className="flex flex-col gap-1.5 items-center">
-        <div className="flex items-center justify-center gap-2 w-full">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={onBack}
-            type="button"
-            className="size-7 border-border shadow-sm"
-          >
-            <ChevronLeft className="h-4 w-4 text-muted-foreground" />
-          </Button>
-          <h2 className="text-lg font-semibold leading-none">
-            Tell us about you
-          </h2>
-        </div>
-        <p className="text-base font-normal leading-6 text-muted-foreground">
-          Let's keep it personal, share a little bit about you.
-        </p>
-      </div>
+    <div className="relative p-3 sm:p-6 flex flex-col items-center text-center gap-4">
+      <DialogHeader
+        title="Tell us about you"
+        description="Let's keep it personal, share a little bit about you."
+        onBack={onBack}
+      />
 
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-full text-left">
         <FieldGroup className="flex flex-col">
@@ -74,7 +57,7 @@ export default function UserInfoStep({ onBack, onNext }) {
                   className={fieldState.invalid ? "border-destructive" : ""}
                 />
                 {fieldState.invalid && (
-                  <FieldError errors={[fieldState.error?.message]} />
+                  <FieldError errors={[fieldState.error]} />
                 )}
               </Field>
             )}
@@ -95,7 +78,7 @@ export default function UserInfoStep({ onBack, onNext }) {
                   className={fieldState.invalid ? "border-destructive" : ""}
                 />
                 {fieldState.invalid && (
-                  <FieldError errors={[fieldState.error?.message]} />
+                  <FieldError errors={[fieldState.error]} />
                 )}
               </Field>
             )}
@@ -111,10 +94,7 @@ export default function UserInfoStep({ onBack, onNext }) {
           >
             Back
           </Button>
-          <Button
-            type="submit"
-            className="px-4"
-          >
+          <Button type="submit" className="px-4">
             Continue
           </Button>
         </div>

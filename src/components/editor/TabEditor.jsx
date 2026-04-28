@@ -12,7 +12,7 @@
   export default function TabEditor({ isScrolled }) {
     return (
       <div
-        className={`z-10 editor-header sticky top-2 py-4 flex items-center justify-between transition-all duration-300 rounded-lg border border-border lg:top-3 w-full max-w-245 mx-auto 
+        className={`z-10 editor-header sticky top-2 py-4 flex items-center justify-between transition-all duration-300 rounded-lg border border-border lg:top-3 w-full 
           ${
             isScrolled
               ? " border-slate-200 shadow-[0_4px_12px_rgba(0,0,0,0.08),0_2px_4px_rgba(0,0,0,0.02)] px-3"

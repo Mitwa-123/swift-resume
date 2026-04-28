@@ -16,40 +16,40 @@ const OptionButton = ({
    
     <Button
       variant="outline"
-      className="w-full h-auto flex justify-between py-3 px-2 shadow-none border-none group hover:bg-base-accent transition-all"
+      className="w-full h-auto flex justify-between py-2 sm:py-3 px-0 sm:px-2 shadow-none border-none group hover:bg-base-accent transition-all"
       onClick={onClick}>
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-1 sm:gap-3">
         <div className="p-1.5 bg-base-accent rounded-lg">
-          <Icon className={`size-5 ${iconColorClass}`} />
+          <Icon className={`size-4 sm:size-5 ${iconColorClass}`} />
         </div>
 
         <div className="text-left">
-          <div className="flex items-center gap-2 mb-2">
-            <p className="font-medium text-base leading-none">{title}</p>
+          <div className="flex items-center gap-2 mb-1 sm:mb-2">
+            <p className="font-medium  text-xs sm:text-base leading-none">{title}</p>
             {showBadge && (
-              <Badge className="text-xs border-none font-medium leading-4 text-white bg-linear-to-b from-[#8055FF] to-[#237BFF]">
+              <Badge className=" text-[10px] sm:text-xs border-none font-medium leading-4 text-white bg-linear-to-b from-[#8055FF] to-[#237BFF]">
                 Recommended
               </Badge>
             )}
           </div>
-          <p className="text-base text-muted-foreground font-normal leading-none">
+          <p className="text-xs sm:text-base text-muted-foreground font-normal leading-none">
             {description}
           </p>
         </div>
       </div>
 
-      <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:translate-x-1 transition-transform" />
+      <ChevronRight className="size-3 sm:size-4 text-muted-foreground group-hover:translate-x-1 transition-transform" />
     </Button>
   );
 };
 
 export default function GetStarted({ onNext }) {
   return (
-    <div className="p-6">
-      <h2 className="text-lg font-semibold leading-none mb-1.5">
+    <div className="p-3 sm:p-6">
+      <h2 className="text-base sm:text-lg font-semibold leading-none mb-0.5 sm:mb-1.5">
         Let's get started
       </h2>
-      <p className="text-base text-muted-foreground leading-6 mb-4">
+      <p className="text-xs sm:text-base text-muted-foreground leading-6 mb-2 sm:mb-4">
         How do you want to create your resume?
       </p>
 

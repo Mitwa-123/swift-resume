@@ -1,50 +1,75 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import TabEditor from "./TabEditor";
-import { useState, useEffect } from "react";
 
 export default function ResumePreview() {
+  const containerRef = useRef(null);
+  const [scale, setScale] = useState(1);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [width, setWidth] = useState(595);
 
-  const handleScroll = (e) => {
-    const scrollTop = e.currentTarget.scrollTop;
-    setIsScrolled(scrollTop > 10);
-  };
+  const BASE_WIDTH = 595.28;
+  const BASE_HEIGHT = 841.89;
 
   useEffect(() => {
-    const handleResize = () => {
-      const containerWidth = window.innerWidth - 32;
+    const updateScale = () => {
+      if (!containerRef.current) return;
 
-      if (containerWidth <= 1268) {
-        setWidth(595);
-      } else {
-        setWidth(Math.min(1100, containerWidth * 0.7));
+      const width = containerRef.current.offsetWidth;
+      let newScale = 1;
+
+      if (width < BASE_WIDTH) {
+        newScale = width / BASE_WIDTH;
+      } else if (width > 900) {
+        const growth = Math.min((width - 900) / 500, 1);
+        newScale = 1 + growth * 0.67;
       }
+
+      setScale(newScale);
     };
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    const observer = new ResizeObserver(updateScale);
+    if (containerRef.current) observer.observe(containerRef.current);
+
+    updateScale();
+    return () => observer.disconnect();
   }, []);
 
   return (
     <div
-      onScroll={handleScroll}
-      className="mx-auto flex flex-col gap-y-2.5 pt-1.5 px-4 sm:pt-5 lg:pb-6 h-full overflow-y-auto [&::-webkit-scrollbar]:hidden"
+      onScroll={(e) => setIsScrolled(e.target.scrollTop > 20)}
+      className="flex flex-col  pt-2 px-4 h-full overflow-y-auto relative scroll-smooth no-scrollbar"
     >
-      <TabEditor isScrolled={isScrolled} />
 
-      <div className="relative flex justify-center items-start w-full">
+      <div className="flex justify-center w-full sticky top-0 z-20">
         <div
-          className="bg-white overflow-hidden h-dvh transition-all duration-200"
-          style={{ width: `${width}px` }}
+          style={{ width: `${BASE_WIDTH * scale}px`, minWidth: "fit-content" }}
         >
-          {/* content */}
+          <TabEditor isScrolled={isScrolled} />
         </div>
       </div>
 
-      <div className="pointer-events-none" />
+      <div ref={containerRef} className="flex justify-center w-full">
+        <div
+          className="relative origin-top transition-transform duration-75"
+          style={{
+            transform: `scale(${scale})`,
+            width: BASE_WIDTH,
+            height: BASE_HEIGHT * scale,
+          }}
+        >
+          <div
+            className="bg-white rounded"
+            style={{
+              width: BASE_WIDTH,
+              minHeight: BASE_HEIGHT,
+              padding: "30px",
+            }}
+          >
+            {/* Resume Content */}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
