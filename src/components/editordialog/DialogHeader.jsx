@@ -2,7 +2,12 @@ import React from "react";
 import { ChevronLeft, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export default function DialogHeader({ title, description, onBack, isJobHistory }) {
+export default function DialogHeader({
+  title,
+  description,
+  onBack,
+  isJobHistory,
+}) {
   return (
     <div className="w-full flex flex-col items-center text-center gap-4">
       <div className="flex p-2.5 items-center justify-center rounded-xl bg-blue-50 border border-blue-100">

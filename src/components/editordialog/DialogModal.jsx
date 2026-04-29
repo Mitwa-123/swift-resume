@@ -8,6 +8,10 @@ import LinkedinStep from "./LinkedinStep";
 import UserInfoStep from "./UserInfoStep";
 import JobHistoryStep from "./JobHistoryStep";
 import JobTitleStep from "./JobTitleStep";
+import EducationStep from "./EducationStep";
+import SkillsStep from "./SkillsStep";
+import ProfessionalHighlights from "./ProfessionalHighlights";
+import CareerGoals from "./CareerGoals";
 
 export default function DialogModal({ isOpen, setIsOpen }) {
   const [step, setStep] = useState("START");
@@ -16,6 +20,7 @@ export default function DialogModal({ isOpen, setIsOpen }) {
   const handleBack = (prevStep) => setStep(prevStep);
 
   const renderStep = () => {
+    console.log("Current Step:", step);
     switch (step) {
       case "START":
         return <GetStarted onNext={handleNext} />;
@@ -48,10 +53,44 @@ export default function DialogModal({ isOpen, setIsOpen }) {
         return (
           <JobTitleStep
             onBack={() => handleBack("JOB_HISTORY")}
-            onNext={() => setIsOpen(false)} 
+            onNext={() => handleNext("EDUCATION")}
+          />
+        );
+      case "EDUCATION":
+        return (
+          <EducationStep
+            onBack={() => handleBack("JOB_TITLE")}
+            onNext={() => handleNext("SKILLS")}
+          />
+        );
+      case "SKILLS":
+        return (
+          <SkillsStep
+            onBack={() => handleBack("EDUCATION")}
+            onNext={() => handleNext("HIGHLIGHTS")}
+          />
+        );
+      case "HIGHLIGHTS":
+        return (
+          <ProfessionalHighlights
+            onBack={() => handleBack("SKILLS")}
+            onNext={() => handleNext("CAREER_GOALS")}
           />
         );
 
+      case "CAREER_GOALS":
+        return (
+          <CareerGoals
+            onBack={() => handleBack("HIGHLIGHTS")}
+            onNext={(stepName) => {
+              if (stepName === "FINISH") {
+                setIsOpen(false);
+              } else {
+                handleNext(stepName);
+              }
+            }}
+          />
+        );
       default:
         return null;
     }

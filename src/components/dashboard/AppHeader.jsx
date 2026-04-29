@@ -34,6 +34,8 @@ export default function AppHeader() {
                 alt="Swift Logo"
                 width={107}
                 height={19}
+                priority
+                className="w-auto h-auto"
               />
             </Link>
 
