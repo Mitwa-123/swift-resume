@@ -26,7 +26,6 @@ import DialogHeader from "./DialogHeader";
 
 const historySchema = z.object({
   title: z.string().min(1, "This field is required"),
-  subtitle: z.string().min(1, "This field is required"),
 });
 
 const HistoryStep = ({
@@ -53,7 +52,7 @@ const HistoryStep = ({
   };
 
   return (
-    <div className="relative p-6 rounded-xl w-full max-w-md mx-auto">
+    <div className="relative p-3 sm:p-6 rounded-xl w-full max-w-md mx-auto">
       <DialogHeader
         title={title}
         description={description}
@@ -87,7 +86,7 @@ const HistoryStep = ({
       </div>
 
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 mt-6">
-        <FieldGroup className="flex flex-col gap-4">
+        <FieldGroup className="flex flex-col gap-4!">
           <Controller
             name="title"
             control={form.control}
@@ -124,7 +123,7 @@ const HistoryStep = ({
           <Label className="text-sm leading-none font-medium text-slate-600 ">
             Start & end date
           </Label>
-          <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 ">
             <Select>
               <SelectTrigger className="w-31.75">
                 <SelectValue placeholder="January" />
@@ -151,7 +150,7 @@ const HistoryStep = ({
               </SelectContent>
             </Select>
 
-            <div className="flex items-center gap-2 sm:ml-2">
+            <div className="flex items-center gap-2 sm:ml-2 cursor-pointer">
               <Switch id="present" defaultChecked />
               <Label
                 htmlFor="present"
@@ -166,7 +165,7 @@ const HistoryStep = ({
         <Button
           variant="ghost"
           size="sm"
-          className="w-full text-muted-foreground gap-1 text-sm font-medium leading-5"
+          className="w-full text-muted-foreground gap-1 text-sm font-medium leading-5 cursor-pointer"
         >
           <Plus size={16} />
           {addButtonText}

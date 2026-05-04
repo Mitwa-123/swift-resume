@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { Sparkles, ChevronLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useForm, Controller } from "react-hook-form";
@@ -43,7 +42,7 @@ export default function UserInfoStep({ onBack, onNext }) {
       />
 
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-full text-left">
-        <FieldGroup className="flex flex-col">
+        <FieldGroup className="flex flex-col gap-6!">
           <Controller
             name="name"
             control={form.control}
@@ -85,7 +84,7 @@ export default function UserInfoStep({ onBack, onNext }) {
           />
         </FieldGroup>
 
-        <div className="flex justify-end items-center gap-2 w-full mt-4">
+        <div className="flex justify-end items-center gap-2  mt-4">
           <Button
             type="button"
             variant="outline"

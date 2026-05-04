@@ -12,6 +12,7 @@ import EducationStep from "./EducationStep";
 import SkillsStep from "./SkillsStep";
 import ProfessionalHighlights from "./ProfessionalHighlights";
 import CareerGoals from "./CareerGoals";
+import GeneratingResume from "./GeneratingResume";
 
 export default function DialogModal({ isOpen, setIsOpen }) {
   const [step, setStep] = useState("START");
@@ -82,15 +83,11 @@ export default function DialogModal({ isOpen, setIsOpen }) {
         return (
           <CareerGoals
             onBack={() => handleBack("HIGHLIGHTS")}
-            onNext={(stepName) => {
-              if (stepName === "FINISH") {
-                setIsOpen(false);
-              } else {
-                handleNext(stepName);
-              }
-            }}
+            onNext={() => handleNext("GENERATING")}
           />
         );
+      case "GENERATING":
+        return <GeneratingResume onFinish={() => setIsOpen(false)} />;
       default:
         return null;
     }
@@ -98,7 +95,10 @@ export default function DialogModal({ isOpen, setIsOpen }) {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="p-0 overflow-hidden border-none shadow-2xl">
+      <DialogContent
+        className="p-0 overflow-hidden border-none shadow-2xl"
+        showCloseButton={step !== "GENERATING"}
+      >
         {renderStep()}
       </DialogContent>
     </Dialog>

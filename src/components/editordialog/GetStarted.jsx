@@ -61,7 +61,7 @@ export default function GetStarted({ onNext }) {
           iconColorClass="text-blue-500"
         />
 
-        <div className="border-t pt-2 border-border">
+        <div className="border-t pt-2">
           <OptionButton
             icon={Sparkles}
             title="Create with AI"

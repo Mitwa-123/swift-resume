@@ -19,7 +19,7 @@ export default function VoiceRecordingStep({
   const [activeTab, setActiveTab] = useState("voice");
 
   return (
-    <div className="relative p-6 flex flex-col items-center text-center rounded-3xl gap-4">
+    <div className="relative p-3 sm:p-6 flex flex-col items-center text-center rounded-3xl gap-4">
       <DialogHeader
         title={title}
         description={description} 
@@ -41,13 +41,13 @@ export default function VoiceRecordingStep({
         </TabsList>
       </Tabs>
 
-      <div className="w-full bg-base-accent/50 rounded-lg p-6 border border-border relative flex flex-col items-center">
+      <div className="w-full bg-base-accent/50 rounded-lg p-3 sm:p-6 border border-border relative flex flex-col items-center">
         <Image
           src="/images/voice-blur.svg"
           alt="Voice Animation"
           width={96}
           height={96}
-          className="h-24 mb-8"
+          className="object-contain mb-8"
           priority 
         />
 
@@ -62,7 +62,7 @@ export default function VoiceRecordingStep({
 
         <div className="w-full flex items-center gap-2.5">
           <span className="text-sm font-medium">0:42</span>
-          <Progress value={40} className="w-full" />
+          <Progress value={40} className="h-1.5 w-full" />
           <span className="text-sm font-medium">5:00</span>
         </div>
       </div>

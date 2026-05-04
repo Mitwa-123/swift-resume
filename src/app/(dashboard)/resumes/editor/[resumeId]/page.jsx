@@ -6,7 +6,7 @@ import ResumePreview from "@/components/editor/ResumePreview";
 import EditorSidebar from "@/components/editor/EditorSidebar";
 import DialogModal from "@/components/editordialog/DialogModal";
 
-export default function Layout() {
+export default function page() {
   const [isOpen, setIsOpen] = useState(true);
   return (
     <div className="fixed flex h-screen w-screen ">

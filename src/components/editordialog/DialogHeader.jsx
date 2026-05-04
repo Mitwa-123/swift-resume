@@ -10,7 +10,7 @@ export default function DialogHeader({
 }) {
   return (
     <div className="w-full flex flex-col items-center text-center gap-4">
-      <div className="flex p-2.5 items-center justify-center rounded-xl bg-blue-50 border border-blue-100">
+      <div className="h-[40px] flex p-2.5 items-center justify-center rounded-xl bg-blue-50 border border-blue-100">
         <Sparkles className="size-4.5 text-blue-600" />
       </div>
 
@@ -21,7 +21,7 @@ export default function DialogHeader({
               variant="ghost"
               size="icon"
               onClick={onBack}
-              className="size-6 sm:size-7 border-border shadow-sm"
+              className="size-6 sm:size-7 border-border shadow-sm cursor-pointer"
             >
               <ChevronLeft className="size-3 sm:size-4 text-muted-foreground" />
             </Button>
@@ -32,7 +32,7 @@ export default function DialogHeader({
         </div>
 
         <p
-          className={`text-base font-normal leading-6 text-muted-foreground ${
+          className={`text-sm sm:text-base font-normal leading-6  text-muted-foreground ${
             isJobHistory ? "max-w-55" : "max-w-none"
           }`}
         >

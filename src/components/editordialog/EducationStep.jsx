@@ -15,10 +15,10 @@ export default function EducationStep({ onNext, onBack }) {
       items={education}
       labels={{ title: "Institution", subtitle: "Field of study" }}
     placeholders={{
-        title: "e.g. Computer Science",
-        subtitle: "e.g. University of Mumbai",
+        title: "",
+        subtitle: "",
       }}
-      addButtonText="Add another education"
+      addButtonText="Add another Job"
       onBack={onBack}
       onNext={onNext}
     />

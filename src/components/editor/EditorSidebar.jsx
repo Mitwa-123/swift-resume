@@ -95,11 +95,15 @@ export default function EditorSidebar() {
     );
   }
 
-  return (
-    <Drawer snapPoints={[0.5, 1]} dismissible={true} open>
-      <DrawerContent className="fixed bottom-0 left-0 right-0 max-h-[92vh] h-full flex flex-col focus:outline-none rounded-t-[20px]">
+return (
+    <Drawer 
+      snapPoints={[0.5, 1]} 
+      dismissible={true} 
+      open={isOpen} 
+      modal={false} 
+    >
+      <DrawerContent className="fixed bottom-0 left-0 right-0 max-h-[92vh] h-full flex flex-col focus:outline-none rounded-t-[20px] z-40"> 
         <DrawerTitle className="sr-only">Resume Sections</DrawerTitle>
-        <div className="mx-auto mt-3 h-1.5 w-12 shrink-0 rounded-full" />
         <div className="flex-1 overflow-y-auto mt-2">{renderContent}</div>
       </DrawerContent>
     </Drawer>
