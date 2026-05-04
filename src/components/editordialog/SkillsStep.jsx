@@ -64,14 +64,14 @@ export default function SkillsStep({ onBack, onNext }) {
     }
   };
   return (
-    <div className="relative p-6 flex flex-col items-center text-center ">
+    <div className="relative p-6 flex flex-col items-center text-center">
       <DialogHeader
         title="What are your top skills?"
         description="Ensure the job title at the top of your resume matches your goals or target role."
         onBack={onBack}
       />
 
-      <div className="flex w-full  gap-2 items-center mt-4 mb-5">
+      <div className="flex w-full gap-2 items-center mt-4 mb-5">
         <Input
           type="text"
           placeholder="Enter multiple skills comma-separated"

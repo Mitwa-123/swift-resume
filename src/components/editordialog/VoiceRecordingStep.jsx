@@ -20,11 +20,7 @@ export default function VoiceRecordingStep({
 
   return (
     <div className="relative p-3 sm:p-6 flex flex-col items-center text-center rounded-3xl gap-4">
-      <DialogHeader
-        title={title}
-        description={description} 
-        onBack={onBack}
-      />
+      <DialogHeader title={title} description={description} onBack={onBack} />
 
       <Tabs
         defaultValue="voice"
@@ -47,16 +43,16 @@ export default function VoiceRecordingStep({
           alt="Voice Animation"
           width={96}
           height={96}
-          className="object-contain mb-8"
-          priority 
+          className="h-24 object-contain mb-8"
+          priority
         />
 
         <div className="flex gap-3 mb-3">
-          <Button variant="outline" size="sm" className="rounded-full">
-            <Pause className="h-4 w-4 mr-1" /> Pause
+          <Button variant="outline" size="sm">
+            <Pause className="h-4 w-4"/> Pause
           </Button>
-          <Button size="sm" className="rounded-full bg-blue-600">
-            <Flag className="h-4 w-4 mr-1" /> Finish
+          <Button size="sm">
+            <Flag className="h-4 w-4"/> Finish
           </Button>
         </div>
 
@@ -71,14 +67,13 @@ export default function VoiceRecordingStep({
         <Button
           type="button"
           variant="outline"
-          onClick={() => onNext(skipStepName)} 
+          onClick={() => onNext(skipStepName)}
           className="px-4"
         >
           Skip
         </Button>
         <Button
           type="button"
-          className="bg-blue-600"
           onClick={() => onNext(nextStepName)}
         >
           Continue

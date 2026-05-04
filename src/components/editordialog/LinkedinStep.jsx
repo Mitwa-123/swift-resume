@@ -13,11 +13,7 @@ export default function LinkedinStep({ onBack, onNext }) {
           description="Paste your LinkedIn profile URL below and our AI will use it to write your resume."
           onBack={onBack}
         />
-
-        <div className="w-full">
-          <Input type="url" placeholder="Your LinkedIn profile URL" />
-        </div>
-
+        <Input type="url" placeholder="Your LinkedIn profile URL" />
         <div className="flex justify-end items-center gap-2 w-full">
           <Button variant="outline" onClick={onBack} className="px-4">
             Back

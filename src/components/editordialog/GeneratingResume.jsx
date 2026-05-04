@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Progress } from "@/components/ui/progress"; 
+import Text from "../Text";
 
 export default function GeneratingResume({ onFinish, onBack }) {
 const [progress, setProgress] = useState(40);
@@ -40,12 +41,12 @@ const [progress, setProgress] = useState(40);
       </div>
 
       <div className="space-y-1.5">
-        <h2 className="text-lg font-semibold leading-none">
+        <Text variant="h2" weight="semibold">
           We’re creating your resume!
-        </h2>
-        <p className="text-base font-normal leading-6 text-muted-foreground">
+        </Text>
+        <Text variant="h3" weight="normal" color="mutes">
           Please wait, we’re generating your resume.
-        </p>
+        </Text>
       </div>
 
       <div className="w-full mx-auto">

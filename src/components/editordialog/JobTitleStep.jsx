@@ -28,7 +28,7 @@ export default function JobTitleStep({ onBack, onNext }) {
 
   const onSubmit = (data) => {
     console.log("Job Title Submitted:", data);
-    onNext(); 
+    onNext();
   };
 
   return (
@@ -61,7 +61,7 @@ export default function JobTitleStep({ onBack, onNext }) {
           />
         </FieldGroup>
 
-        <div className="flex justify-end items-center gap-2 w-full mt-4">
+        <div className="flex justify-end items-center gap-2 mt-4">
           <div className="flex gap-2">
             <Button
               type="button"

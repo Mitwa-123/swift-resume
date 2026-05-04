@@ -106,12 +106,19 @@
   --radius-4xl: calc(var(--radius) * 2.6);
   --color-base-primary: var(--base-primary);
    --color-primary-border: var(--primary-border);
+    --color-primary-purple: var(--primary-purple);
+  --color-light-blue : var(--light-blue);
+   --color-base-white : var(--base-white)
+
 
 }
 
 :root {
   --base-primary: #2563EB;
   --primary-border:#1D4ED8;
+  --primary-purple: #8055FF;
+  --light-blue:#237BFF;
+  --base-white: #FFFFFF;
 --text-base-size: 20px;
 --font-sans: 'Geist', sans-serif;
 --font-heading: 'Cabinet Grotesk', sans-serif;
@@ -189,7 +196,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground  ;
+    @apply bg-background text-foreground font-medium  ;
   }
   html {
     @apply font-sans;

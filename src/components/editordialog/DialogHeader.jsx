@@ -1,6 +1,8 @@
 import React from "react";
 import { ChevronLeft, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Text from "../Text";
+
 
 export default function DialogHeader({
   title,
@@ -10,7 +12,7 @@ export default function DialogHeader({
 }) {
   return (
     <div className="w-full flex flex-col items-center text-center gap-4">
-      <div className="h-[40px] flex p-2.5 items-center justify-center rounded-xl bg-blue-50 border border-blue-100">
+      <div className="h-10 flex p-2.5 items-center justify-center rounded-xl bg-blue-50 border border-blue-100">
         <Sparkles className="size-4.5 text-blue-600" />
       </div>
 
@@ -26,18 +28,14 @@ export default function DialogHeader({
               <ChevronLeft className="size-3 sm:size-4 text-muted-foreground" />
             </Button>
           )}
-          <h2 className="text-base sm:text-lg font-semibold leading-none">
+          <Text variant="h2" weight="semibold">
             {title}
-          </h2>
+          </Text>
         </div>
 
-        <p
-          className={`text-sm sm:text-base font-normal leading-6  text-muted-foreground ${
-            isJobHistory ? "max-w-55" : "max-w-none"
-          }`}
-        >
+        <Text variant="h3"color="muted" weight="normal" className={isJobHistory ? "max-w-55" : "max-w-none"}>
           {description}
-        </p>
+        </Text>
       </div>
     </div>
   );
