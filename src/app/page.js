@@ -3,6 +3,12 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
 
 export default function Page() {
   return (
@@ -23,6 +29,60 @@ export default function Page() {
       <Badge>10</Badge>
 
       <Button type="submit">Sign in</Button>
+       <Accordion type="single">
+                    <AccordionItem value="personal-info">
+                      <AccordionTrigger className="hover:no-underline">
+                        <div className="flex items-center gap-3">
+                          {/* <GripVertical className="size-5 text-muted-foreground" /> */}
+      
+                          {/* <div className="p-1.5 bg-muted rounded-md">
+                            <User className="size-5" />
+                          </div> */}
+      
+                          <div className="text-left">
+                            <p className="text-sm font-medium leading-5 mb-1">
+                              Personal Information
+                            </p>
+      
+                            <p className="text-xs font-medium text-muted-foreground">
+                              Add your basic details
+                            </p>
+                          </div>
+                        </div>
+                      </AccordionTrigger>
+      
+                      <AccordionContent >
+                        Personal Info Content
+                      </AccordionContent>
+                    </AccordionItem>
+      
+                    <AccordionItem value="education">
+                      <AccordionTrigger className="hover:no-underline">
+                        <div className="flex items-center gap-3">
+                          {/* <GripVertical className="size-5 text-muted-foreground" />
+      
+                          <div className="p-1.5 bg-muted rounded-md">
+                            <GraduationCap className="size-5" />
+                          </div> */}
+      
+                          <div className="text-left">
+                            <p className="text-sm font-medium leading-5 mb-1">
+                              Education
+                            </p>
+      
+                            <p className="text-xs font-medium text-muted-foreground">
+                              Add your education details
+                            </p>
+                          </div>
+                        </div>
+                      </AccordionTrigger>
+      
+                      <AccordionContent >
+                        Education Content
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
     </div>
+    
   );
 }

@@ -18,7 +18,7 @@ const jobTitleSchema = z.object({
   jobTitle: z.string().min(1, "Job title is required"),
 });
 
-export default function JobTitleStep({ onBack, onNext }) {
+export default function JobTitleStep({ onBack, onNext, skipStepName }) {
   const form = useForm({
     resolver: zodResolver(jobTitleSchema),
     defaultValues: {
@@ -66,7 +66,7 @@ export default function JobTitleStep({ onBack, onNext }) {
             <Button
               type="button"
               variant="outline"
-              onClick={onBack}
+              onClick={() => onNext(skipStepName)}
               className="px-4"
             >
               Skip

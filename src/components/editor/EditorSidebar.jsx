@@ -4,19 +4,34 @@ import React, { useState, useEffect } from "react";
 import { SquarePen, Eye, PanelRightClose } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"; 
-import { Accordion } from "@/components/ui/accordion";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
 import { Drawer, DrawerContent, DrawerTitle } from "@/components/ui/drawer";
-import SectionItem from "./SectionItem";
-import { useMediaQuery } from "./use-media-query";
-import { RESUME_SECTIONS } from "@/lib/data/editor-data";
 
 export default function EditorSidebar() {
   const [isMounted, setIsMounted] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
   const [isOpen, setIsOpen] = useState(true);
-  const isDesktop = useMediaQuery("(min-width: 1024px)");
 
-  useEffect(() => setIsMounted(true), []);
+  useEffect(() => {
+    setIsMounted(true);
+
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+    const handleChange = (e) => {
+      setIsDesktop(e.matches);
+    };
+    setIsDesktop(mediaQuery.matches);
+    mediaQuery.addEventListener("change", handleChange);
+    return () => {
+      mediaQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
+
   if (!isMounted) return null;
 
   const renderContent = (
@@ -26,6 +41,7 @@ export default function EditorSidebar() {
           <Button variant="outline" size="icon-lg">
             <PanelRightClose />
           </Button>
+
           <TabsList variant="boxed" className="max-w-44.25 w-full">
             <TabsTrigger value="tab1">Editor</TabsTrigger>
             <TabsTrigger value="tab2">Design</TabsTrigger>
@@ -34,14 +50,15 @@ export default function EditorSidebar() {
 
         <TabsContent
           value="tab1"
-          className="flex-1 flex flex-col overflow-hidden m-0"
+          className="flex-1 flex flex-col overflow-y-auto m-0 custom-scrollbar will-change-transform"
         >
           <div className="flex items-center justify-between px-4 py-2 border-b bg-muted/40">
             <h3 className="text-xs font-medium text-muted-foreground">
               Resume sections
             </h3>
+
             <Button variant="ghost" size="sm" className="text-muted-foreground">
-              <Eye className="mr-2 w-4 h-4" />
+              <Eye className=" w-4 h-4" />
               Visibility
             </Button>
           </div>
@@ -51,8 +68,10 @@ export default function EditorSidebar() {
               <h2 className="text-base font-semibold text-foreground">
                 Nursing Resume
               </h2>
+
               <SquarePen className="w-4 h-4 text-muted-foreground cursor-pointer" />
             </div>
+
             <Button variant="outline" className="hidden md:flex items-center">
               <Image
                 src="/images/linkedin.svg"
@@ -60,22 +79,67 @@ export default function EditorSidebar() {
                 width={16}
                 height={16}
               />
-              <span className="text-sm font-medium ml-2">
+
+              <span className="text-sm font-medium ">
                 Prefill with Linkedin
               </span>
             </Button>
           </div>
 
-          <div className="px-4 pb-6 overflow-y-auto [&::-webkit-scrollbar]:hidden">
-            <Accordion type="single">
-              {RESUME_SECTIONS.map((sec) => (
-                <SectionItem key={sec.value} {...sec} />
-              ))}
+          <div className="flex-1 ">
+            <Accordion type="single" className="w-full px-4">
+              <AccordionItem value="personal-info">
+                <AccordionTrigger className="hover:no-underline">
+                  <div className="flex items-center gap-3">
+                    {/* <GripVertical className="size-5 text-muted-foreground" /> */}
+
+                    {/* <div className="p-1.5 bg-muted rounded-md">
+                      <User className="size-5" />
+                    </div> */}
+
+                    <div className="text-left">
+                      <p className="text-sm font-medium leading-5 mb-1">
+                        Personal Information
+                      </p>
+
+                      <p className="text-xs font-medium text-muted-foreground">
+                        Add your basic details
+                      </p>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+
+                <AccordionContent>Personal Info Content</AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="education">
+                <AccordionTrigger className="hover:no-underline">
+                  <div className="flex items-center gap-3">
+                    {/* <GripVertical className="size-5 text-muted-foreground" />
+
+                    <div className="p-1.5 bg-muted rounded-md">
+                      <GraduationCap className="size-5" />
+                    </div> */}
+
+                    <div className="text-left">
+                      <p className="text-sm font-medium leading-5 mb-1">
+                        Education
+                      </p>
+
+                      <p className="text-xs font-medium text-muted-foreground">
+                        Add your education details
+                      </p>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+
+                <AccordionContent>Education Content</AccordionContent>
+              </AccordionItem>
             </Accordion>
           </div>
         </TabsContent>
 
-        {/* --- DESIGN TAB --- */}
+        {/* design sidebar */}
         <TabsContent value="tab2" className="flex-1 p-6 m-0">
           <div className="flex items-center justify-center h-full border-2 border-dashed rounded-xl">
             <h2 className="text-lg font-medium text-muted-foreground">
@@ -95,15 +159,17 @@ export default function EditorSidebar() {
     );
   }
 
-return (
-    <Drawer 
-      snapPoints={[0.5, 1]} 
-      dismissible={true} 
-      open={isOpen} 
-      modal={false} 
+  return (
+    <Drawer
+      snapPoints={[0.5, 1]}
+      dismissible={true}
+      open={isOpen}
+      onOpenChange={setIsOpen}
+      modal={false}
     >
-      <DrawerContent className="fixed bottom-0 left-0 right-0 max-h-[92vh] h-full flex flex-col focus:outline-none rounded-t-[20px] z-40"> 
+      <DrawerContent>
         <DrawerTitle className="sr-only">Resume Sections</DrawerTitle>
+
         <div className="flex-1 overflow-y-auto mt-2">{renderContent}</div>
       </DrawerContent>
     </Drawer>

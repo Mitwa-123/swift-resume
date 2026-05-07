@@ -26,7 +26,7 @@ const OptionButton = ({
 
         <div className="text-left">
           <div className="flex items-center gap-2 mb-1 sm:mb-2">
-            <Text variant="h1">{title}</Text>
+            <Text variant="h1" weight="medium">{title}</Text>
             {showBadge && (
               <Badge className="text-[10px] sm:text-xs border-none font-medium leading-4 text-base-white bg-linear-to-b from-primary-purple to-light-blue">
                 Recommended
@@ -50,7 +50,7 @@ export default function GetStarted({ onNext }) {
       <Text variant="h2" weight="semibold" className="mb-0.5 sm:mb-1.5">
         Let's get started
       </Text>
-      <Text variant="h3" color="muted" className=" mb-2 sm:mb-4">
+      <Text variant="h3" color="muted" className="mb-2 sm:mb-4">
         How do you want to create your resume?
       </Text>
 
