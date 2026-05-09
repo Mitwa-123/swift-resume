@@ -9,6 +9,8 @@ export default function Text({
     h1: "text-sm sm:text-base leading-none",
     h2: "text-base sm:text-lg leading-none",
     h3: "text-sm sm:text-base leading-6",
+    h4: "text-xs leading-4",
+    h6: "text-sm leading-5 text-secondary-foreground"
   };
 
   const colors = {

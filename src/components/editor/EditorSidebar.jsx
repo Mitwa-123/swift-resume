@@ -12,6 +12,8 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { Drawer, DrawerContent, DrawerTitle } from "@/components/ui/drawer";
+import { RESUME_SECTIONS } from "@/lib/data/editor-data";
+import { GripVertical } from "lucide-react";
 
 export default function EditorSidebar() {
   const [isMounted, setIsMounted] = useState(false);
@@ -35,7 +37,7 @@ export default function EditorSidebar() {
   if (!isMounted) return null;
 
   const renderContent = (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full  will-change-transform">
       <Tabs defaultValue="tab1" className="flex flex-col h-full w-full">
         <div className="flex items-center justify-between px-4.5 py-3.5 border-b">
           <Button variant="outline" size="icon-lg">
@@ -48,10 +50,7 @@ export default function EditorSidebar() {
           </TabsList>
         </div>
 
-        <TabsContent
-          value="tab1"
-          className="flex-1 flex flex-col overflow-y-auto m-0 custom-scrollbar will-change-transform"
-        >
+        <TabsContent value="tab1" className="flex-1 min-h-0 flex flex-col m-0">
           <div className="flex items-center justify-between px-4 py-2 border-b bg-muted/40">
             <h3 className="text-xs font-medium text-muted-foreground">
               Resume sections
@@ -63,78 +62,60 @@ export default function EditorSidebar() {
             </Button>
           </div>
 
-          <div className="flex items-center justify-between px-6 py-4 border-b">
-            <div className="flex items-center gap-1.25">
-              <h2 className="text-base font-semibold text-foreground">
-                Nursing Resume
-              </h2>
+          <div className="flex-1 min-h-0 overflow-y-auto custom-scrollbar pr-1">
+            <div className="flex items-center justify-between px-6 py-4 border-b">
+              <div className="flex items-center gap-1.25">
+                <h2 className="text-base font-semibold text-foreground">
+                  Nursing Resume
+                </h2>
 
-              <SquarePen className="w-4 h-4 text-muted-foreground cursor-pointer" />
+                <SquarePen className="w-4 h-4 text-muted-foreground cursor-pointer" />
+              </div>
+
+              <Button variant="outline" className="hidden md:flex items-center">
+                <Image
+                  src="/images/linkedin.svg"
+                  alt="linkedin"
+                  width={16}
+                  height={16}
+                />
+
+                <span className="text-sm font-medium ">
+                  Prefill with Linkedin
+                </span>
+              </Button>
             </div>
+            <Accordion type="single">
+              {RESUME_SECTIONS.map((sec) => {
+                const Icon = sec.icon;
 
-            <Button variant="outline" className="hidden md:flex items-center">
-              <Image
-                src="/images/linkedin.svg"
-                alt="linkedin"
-                width={16}
-                height={16}
-              />
+                return (
+                  <AccordionItem key={sec.value} value={sec.value}>
+                    <AccordionTrigger className="hover:no-underline p-2.5 sm:p-4.5">
+                      <div className="flex items-center gap-3">
+                        <GripVertical className="w-5 h-5 text-muted-foreground" />
 
-              <span className="text-sm font-medium ">
-                Prefill with Linkedin
-              </span>
-            </Button>
-          </div>
+                        <div className="p-1.5 bg-muted rounded-md">
+                          <Icon className="w-5.5 h-5.5" />
+                        </div>
 
-          <div className="flex-1 ">
-            <Accordion type="single" className="w-full px-4">
-              <AccordionItem value="personal-info">
-                <AccordionTrigger className="hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    {/* <GripVertical className="size-5 text-muted-foreground" /> */}
+                        <div className="text-left">
+                          <p className="text-sm font-medium leading-5 mb-1">
+                            {sec.title}
+                          </p>
+                          <p className="text-xs font-medium text-muted-foreground">
+                            {sec.desc}
+                          </p>
+                        </div>
+                      </div>
+                    </AccordionTrigger>
 
-                    {/* <div className="p-1.5 bg-muted rounded-md">
-                      <User className="size-5" />
-                    </div> */}
-
-                    <div className="text-left">
-                      <p className="text-sm font-medium leading-5 mb-1">
-                        Personal Information
-                      </p>
-
-                      <p className="text-xs font-medium text-muted-foreground">
-                        Add your basic details
-                      </p>
-                    </div>
-                  </div>
-                </AccordionTrigger>
-
-                <AccordionContent>Personal Info Content</AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="education">
-                <AccordionTrigger className="hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    {/* <GripVertical className="size-5 text-muted-foreground" />
-
-                    <div className="p-1.5 bg-muted rounded-md">
-                      <GraduationCap className="size-5" />
-                    </div> */}
-
-                    <div className="text-left">
-                      <p className="text-sm font-medium leading-5 mb-1">
-                        Education
-                      </p>
-
-                      <p className="text-xs font-medium text-muted-foreground">
-                        Add your education details
-                      </p>
-                    </div>
-                  </div>
-                </AccordionTrigger>
-
-                <AccordionContent>Education Content</AccordionContent>
-              </AccordionItem>
+                    <AccordionContent className="border-t">
+                      {sec.content}
+                    </AccordionContent>
+                  </AccordionItem>
+                );
+              })}
             </Accordion>
           </div>
         </TabsContent>
@@ -153,7 +134,7 @@ export default function EditorSidebar() {
 
   if (isDesktop) {
     return (
-      <aside className="lg:shrink-0 lg:mr-3 my-3 lg:border lg:rounded-xl lg:bg-background lg:max-w-130 lg:w-full overflow-hidden">
+      <aside className="lg:shrink-0 lg:mr-3 my-3 lg:border lg:rounded-xl lg:bg-background lg:max-w-130 lg:w-full overflow-hidden h-[calc(100vh-24px)]">
         {renderContent}
       </aside>
     );
