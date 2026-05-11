@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
@@ -13,30 +12,25 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  Plus,
-  GripVertical,
-  ChevronDown,
-  Trash2,
-} from "lucide-react";
+import { GripVertical, ChevronDown, Trash2 } from "lucide-react";
 import Text from "../Text";
 import { Textarea } from "@/components/ui/textarea";
 
 export default function SimpleSectionWrapper({
   form,
   onDelete,
+  isOpen,
   primaryLabel,
+  onToggle,
   primaryPlaceholder,
   secondaryLabel,
   secondaryPlaceholder,
   descriptionLabel,
 }) {
   const { control } = form;
-  const [isOpen, setIsOpen] = React.useState(true);
 
   return (
     <div className="space-y-6">
-      {/* Card Content */}
       <div
         className={`border border-border rounded-lg bg-base-accent/70 transition-all ${
           isOpen ? "px-4 py-4.5" : "px-4 py-3"
@@ -46,7 +40,7 @@ export default function SimpleSectionWrapper({
           className={`flex items-center justify-between group cursor-pointer ${
             isOpen ? "mb-6" : "mb-0"
           }`}
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => onToggle()}
         >
           <div className="flex items-center gap-1.5">
             <GripVertical className="w-5 h-5 text-muted-foreground" />
@@ -59,7 +53,7 @@ export default function SimpleSectionWrapper({
               className={`w-5 h-5 text-muted-foreground cursor-pointer transition-transform ${
                 isOpen ? "rotate-180" : ""
               }`}
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => onToggle()}
             />
             <Trash2
               className="w-4 h-4 text-muted-foreground cursor-pointer"
@@ -102,7 +96,7 @@ export default function SimpleSectionWrapper({
               <Text variant="h6" weight="medium">
                 Date
               </Text>
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3">
                 <div className="flex gap-3">
                   <Select defaultValue="january">
                     <SelectTrigger className="w-33.25 rounded-lg">
@@ -123,7 +117,10 @@ export default function SimpleSectionWrapper({
                 </div>
                 <div className="flex items-center gap-2">
                   <Switch id="show-date" />
-                  <Label htmlFor="show-date" className="text-sm font-medium">
+                  <Label
+                    htmlFor="show-date"
+                    className="text-sm font-medium whitespace-nowrap"
+                  >
                     Show date
                   </Label>
                 </div>

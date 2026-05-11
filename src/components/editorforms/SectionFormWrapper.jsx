@@ -25,6 +25,8 @@ import { Textarea } from "@/components/ui/textarea";
 export default function SectionFormWrapper({
   form,
   onDelete,
+  isOpen,
+  onToggle,
   sectionLabel,
   primaryLabel,
   primaryPlaceholder,
@@ -34,7 +36,6 @@ export default function SectionFormWrapper({
   descriptionLabel,
 }) {
   const { control } = form;
-  const [isOpen, setIsOpen] = React.useState(true);
 
   return (
     <div className="space-y-6">
@@ -47,7 +48,7 @@ export default function SectionFormWrapper({
           className={`flex items-center justify-between group cursor-pointer ${
             isOpen ? "mb-6" : "mb-0"
           }`}
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => onToggle()}
         >
           <div className="flex items-center gap-1.5">
             <GripVertical className="w-5 h-5 text-muted-foreground" />
@@ -60,7 +61,7 @@ export default function SectionFormWrapper({
               className={`w-5 h-5 text-muted-foreground cursor-pointer transition-transform ${
                 isOpen ? "rotate-180" : ""
               }`}
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => onToggle()}
             />
             <Trash2
               className="w-4 h-4 text-muted-foreground cursor-pointer"
@@ -162,7 +163,7 @@ export default function SectionFormWrapper({
                 <Label className="text-slate-600 text-sm leading-none font-normal">
                   End date
                 </Label>
-                <div className="flex items-center">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-3">
                   <div className="flex gap-2.5">
                     <Select defaultValue="january">
                       <SelectTrigger className="w-28 rounded-lg">
@@ -172,6 +173,7 @@ export default function SectionFormWrapper({
                         <SelectItem value="january">January</SelectItem>
                       </SelectContent>
                     </Select>
+
                     <Select defaultValue="2021">
                       <SelectTrigger className="w-28 rounded-lg">
                         <SelectValue placeholder="Year" />
@@ -180,15 +182,16 @@ export default function SectionFormWrapper({
                         <SelectItem value="2021">2021</SelectItem>
                       </SelectContent>
                     </Select>
-                    <div className="flex items-center gap-2">
-                      <Switch id="present" defaultChecked />
-                      <Label
-                        htmlFor="present"
-                        className="text-sm leading-none font-medium"
-                      >
-                        Present
-                      </Label>
-                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <Switch id="present" defaultChecked />
+                    <Label
+                      htmlFor="present"
+                      className="text-sm leading-none font-medium whitespace-nowrap"
+                    >
+                      Present
+                    </Label>
                   </div>
                 </div>
               </div>
@@ -202,7 +205,7 @@ export default function SectionFormWrapper({
               </Text>
               <div className="relative">
                 <Textarea placeholder="Placeholder" variant="focus" />
-                <div className="absolute bottom-3 left-3 right-3 border-t pt-2 flex items-center gap-2 ">
+                <div className="absolute bottom-3 left-3 right-3 border-t pt-2 flex items-center gap-2">
                   <Button type="button" variant="secondary" size="sm">
                     <Sparkles className="size-4 text-yellow-500" />
                     Write with AI

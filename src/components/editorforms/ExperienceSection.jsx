@@ -3,9 +3,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import SectionFormWrapper from "./SectionFormWrapper";
-import {
-  Plus
-} from "lucide-react";
+import { Plus } from "lucide-react";
 
 export default function ExperienceSection() {
   const form = useForm({
@@ -14,12 +12,25 @@ export default function ExperienceSection() {
       secondaryField: "",
     },
   });
-  const [items, setItems] = useState([{}]);
+
+const [items, setItems] = useState([]);
+const [openIndex, setOpenIndex] = useState(null);
   const handleAdd = () => {
-    setItems((prev) => [...prev, {}]);
+    setItems((prev) => {
+      const updated = [...prev, {}];
+
+      setOpenIndex(updated.length - 1);
+
+      return updated;
+    });
   };
+
   const handleDelete = (index) => {
     setItems((prev) => prev.filter((_, i) => i !== index));
+
+    if (openIndex === index) {
+      setOpenIndex(null);
+    }
   };
 
   return (
@@ -31,13 +42,14 @@ export default function ExperienceSection() {
         <Plus className="w-4 h-4" />
         <span className="text-sm font-medium">Add experience or job</span>
       </div>
+
       {items.map((item, index) => (
         <SectionFormWrapper
           key={index}
           form={form}
-          onAdd={handleAdd}
+          isOpen={openIndex === index}
+          onToggle={() => setOpenIndex(openIndex === index ? null : index)}
           onDelete={() => handleDelete(index)}
-          addButtonText="Add experience or job"
           sectionLabel="Your role"
           primaryLabel="Job title"
           primaryPlaceholder="Software Engineer"

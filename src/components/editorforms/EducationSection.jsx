@@ -13,14 +13,24 @@ export default function EducationSection() {
     },
   });
 
-  const [items, setItems] = useState([{}]);
-
+  const [items, setItems] = useState([]);
+  const [openIndex, setOpenIndex] = useState(null);
   const handleAdd = () => {
-    setItems((prev) => [...prev, {}]);
+    setItems((prev) => {
+      const updated = [...prev, {}];
+
+      setOpenIndex(updated.length - 1);
+
+      return updated;
+    });
   };
 
   const handleDelete = (index) => {
     setItems((prev) => prev.filter((_, i) => i !== index));
+
+    if (openIndex === index) {
+      setOpenIndex(null);
+    }
   };
 
   return (
@@ -37,6 +47,8 @@ export default function EducationSection() {
         <SectionFormWrapper
           key={index}
           form={form}
+          isOpen={openIndex === index}
+          onToggle={() => setOpenIndex(openIndex === index ? null : index)}
           onDelete={() => handleDelete(index)}
           sectionLabel="Your study"
           primaryLabel="Field of study"

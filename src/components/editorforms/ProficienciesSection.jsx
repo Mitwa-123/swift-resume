@@ -13,14 +13,22 @@ export default function ProficienciesSection() {
     },
   });
 
-  const [items, setItems] = useState([{}]);
+  const [items, setItems] = useState([]);
+  const [openIndex, setOpenIndex] = useState(null);
 
   const handleAdd = () => {
-    setItems((prev) => [...prev, {}]);
+    setItems((prev) => {
+      const updated = [...prev, {}];
+      setOpenIndex(updated.length - 1);
+      return updated;
+    });
   };
 
   const handleDelete = (index) => {
     setItems((prev) => prev.filter((_, i) => i !== index));
+    if (openIndex === index) {
+      setOpenIndex(null);
+    }
   };
 
   return (
@@ -37,10 +45,9 @@ export default function ProficienciesSection() {
         <SimpleSectionWrapper
           key={index}
           form={form}
-          onAdd={handleAdd}
+          isOpen={openIndex === index}
+          onToggle={() => setOpenIndex(openIndex === index ? null : index)}
           onDelete={() => handleDelete(index)}
-          addButtonText="Add proficiency"
-          sectionLabel="Proficiency"
           primaryLabel="Title"
           primaryPlaceholder="AWS Certified Cloud Practitioner"
           secondaryLabel="Subtitle"
