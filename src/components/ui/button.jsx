@@ -13,11 +13,11 @@ const buttonVariants = cva(
         outline:
           "border-border bg-background shadow-xs hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50 cursor-pointer",
         secondary:
-          "border border-border bg-secondary text-secondary-foreground shadow-sm ring-2 ring-inset ring-[#FFFFFF] hover:bg-base-accent/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
+          "border border-border bg-secondary text-secondary-foreground shadow-sm ring-2 ring-inset ring-[#FFFFFF] hover:bg-base-accent/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground cursor-pointer",
         ghost:
-          "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
+          "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50 cursor-pointer",
         destructive:
-          "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
+          "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40 cursor-pointer",
         link: "text-primary underline-offset-4 hover:underline cursor-pointer ",
       },
       size: {

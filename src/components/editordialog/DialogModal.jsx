@@ -96,7 +96,7 @@ export default function DialogModal({ isOpen, setIsOpen }) {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent
-        className="p-0 overflow-hidden border-none shadow-2xl"
+        className="p-0 overflow-hidden border-none shadow-2xl w-106.25"
         showCloseButton={step !== "GENERATING"}
       >
         {renderStep()}

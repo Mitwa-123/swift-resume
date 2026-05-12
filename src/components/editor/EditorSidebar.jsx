@@ -93,7 +93,7 @@ export default function EditorSidebar() {
                   <AccordionItem key={sec.value} value={sec.value}>
                     <AccordionTrigger className="hover:no-underline p-2.5 sm:p-4.5">
                       <div className="flex items-center gap-3">
-                        <GripVertical className="w-5 h-5 text-muted-foreground" />
+                        <GripVertical className="w-5 h-5 text-muted-foreground cursor-grab" />
 
                         <div className="p-1.5 bg-muted rounded-md">
                           <Icon className="w-5.5 h-5.5" />

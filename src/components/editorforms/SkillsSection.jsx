@@ -100,7 +100,7 @@ export default function SkillsSection() {
             className="flex items-center justify-between rounded-sm border border-border bg-secondary p-3"
           >
             <div className="flex items-center gap-1 flex-1">
-              <GripVertical className="size-4.5 text-muted-foreground shrink-0" />
+              <GripVertical className="size-4.5 text-muted-foreground shrink-0 cursor-grab" />
 
               {editingIndex === index ? (
                 <input
@@ -125,14 +125,14 @@ export default function SkillsSection() {
                 }}
                 className="text-muted-foreground"
               >
-                <SquarePen className="size-3.5" />
+                <SquarePen className="size-3.5 cursor-pointer" />
               </button>
               <button
                 type="button"
                 onClick={() => setSkills(skills.filter((_, i) => i !== index))}
                 className=" text-muted-foreground"
               >
-                <X className="size-3.5" />
+                <X className="size-3.5 cursor-pointer" />
               </button>
             </div>
           </div>
