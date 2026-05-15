@@ -20,6 +20,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import PaymentDialog from "../dialogpayment/PaymentDialog";
+import PaymentFlow from "../dialogpayment/PaymentFlow";
 
 export default function TabEditor({ isScrolled }) {
   const [open, setOpen] = useState(false);
@@ -85,7 +86,7 @@ export default function TabEditor({ isScrolled }) {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <PaymentDialog open={isModalOpen} onOpenChange={setIsModalOpen} />
+      <PaymentFlow isOpen={isModalOpen} setIsOpen={setIsModalOpen} />
     </div>
   );
 }

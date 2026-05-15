@@ -32,7 +32,7 @@ export default function ResumeTabs() {
       <div className="flex items-center">
         <Link href="/resumes/create-resume">
           <Button size="sm" variant="default">
-            <Plus className="h-4 w-4 mr-2" />
+            <Plus className="h-4 w-4" />
             <span className="hidden sm:inline">Create resume</span>
           </Button>
         </Link>

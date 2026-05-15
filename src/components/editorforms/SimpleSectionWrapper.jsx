@@ -8,7 +8,9 @@ import { Field, FieldLabel, FieldError } from "@/components/ui/field";
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
+  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
@@ -28,6 +30,20 @@ export default function SimpleSectionWrapper({
   descriptionLabel,
 }) {
   const { control } = form;
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
   return (
     <div className="space-y-6">
@@ -103,7 +119,11 @@ export default function SimpleSectionWrapper({
                       <SelectValue placeholder="Month" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="january">January</SelectItem>
+                      {months.map((month) => (
+                        <SelectItem key={month} value={month.toLowerCase()}>
+                          {month}
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                   <Select defaultValue="2021">

@@ -36,6 +36,20 @@ export default function SectionFormWrapper({
   descriptionLabel,
 }) {
   const { control } = form;
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
   return (
     <div className="space-y-6">
@@ -141,11 +155,15 @@ export default function SectionFormWrapper({
                 </Label>
                 <div className="flex gap-3">
                   <Select defaultValue="january">
-                    <SelectTrigger className="w-42 rounded-lg">
+                    <SelectTrigger className="w-33.25 rounded-lg">
                       <SelectValue placeholder="Month" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="january">January</SelectItem>
+                      {months.map((month) => (
+                        <SelectItem key={month} value={month.toLowerCase()}>
+                          {month}
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                   <Select defaultValue="2021">
@@ -166,11 +184,15 @@ export default function SectionFormWrapper({
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3">
                   <div className="flex gap-2.5">
                     <Select defaultValue="january">
-                      <SelectTrigger className="w-28 rounded-lg">
+                      <SelectTrigger className="w-33.25 rounded-lg">
                         <SelectValue placeholder="Month" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="january">January</SelectItem>
+                        {months.map((month) => (
+                          <SelectItem key={month} value={month.toLowerCase()}>
+                            {month}
+                          </SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
 

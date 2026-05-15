@@ -37,7 +37,7 @@ export default function CustomSection() {
     <div className="space-y-6">
       <div
         onClick={handleAdd}
-        className="w-full flex items-center justify-start gap-1 border-2 border-dashed border-border rounded-md p-4 cursor-pointer hover:bg-accent/50 transition-colors"
+        className="w-full flex items-center justify-start gap-1 border border-dashed border-border rounded-md p-4 cursor-pointer hover:bg-accent/50 transition-colors"
       >
         <Plus className="w-4 h-4" />
         <span className="text-sm font-medium leading-4">Add proficiency</span>

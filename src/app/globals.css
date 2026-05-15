@@ -107,6 +107,7 @@
   --color-base-primary: var(--base-primary);
    --color-primary-border: var(--primary-border);
     --color-primary-purple: var(--primary-purple);
+     --color-light-purple: var(--light-purple);
   --color-light-blue : var(--light-blue);
    --color-base-white : var(--base-white)
 
@@ -117,6 +118,7 @@
   --base-primary: #2563EB;
   --primary-border:#1D4ED8;
   --primary-purple: #8055FF;
+  --light-purple: #635BFF ;
   --light-blue:#237BFF;
   --base-white: #FFFFFF;
 --text-base-size: 20px;

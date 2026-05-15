@@ -37,7 +37,7 @@ const [openIndex, setOpenIndex] = useState(null);
     <div className="space-y-6">
       <div
         onClick={handleAdd}
-        className="w-full flex items-center gap-1 border-2 border-dashed border-border rounded-md p-4 cursor-pointer"
+        className="w-full flex items-center gap-1 border border-dashed border-border rounded-md p-4 cursor-pointer"
       >
         <Plus className="w-4 h-4" />
         <span className="text-sm font-medium">Add experience or job</span>
