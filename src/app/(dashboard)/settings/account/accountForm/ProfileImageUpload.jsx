@@ -16,6 +16,26 @@ import {
 } from "@/components/ui/field";
 
 export default function ProfileImageUpload({ form }) {
+  const fileInputRef = React.useRef(null);
+  const [previewUrl, setPreviewUrl] = React.useState(
+    "/images/profile-avtar.svg",
+  );
+  const handleChangeClick = () => {
+    fileInputRef.current?.click();
+  };
+  const handleFileChange = (event) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const url = URL.createObjectURL(file);
+      setPreviewUrl(url);
+    }
+  };
+  const handleDeleteClick = () => {
+    setPreviewUrl("/images/profile-avtar.svg");
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
   return (
     <div className="flex flex-col lg:flex-row gap-6 lg:gap-30">
       <div className="lg:min-w-62.5">
@@ -30,13 +50,23 @@ export default function ProfileImageUpload({ form }) {
 
         <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5">
           <Avatar className="w-20 h-20 sm:w-24 sm:h-24">
-            <AvatarImage src="/images/profile-avtar.svg" />
+            <AvatarImage src={previewUrl} alt="Profile" />
           </Avatar>
 
           <div className="flex gap-2 flex-wrap">
+            <input
+              type="file"
+              ref={fileInputRef}
+              onChange={handleFileChange}
+              accept="image/*"
+              className="hidden"
+            />
+
             <Button
               size="sm"
               variant="secondary"
+              type="button" 
+              onClick={handleChangeClick}
             >
               <Upload />
               Change
@@ -45,6 +75,8 @@ export default function ProfileImageUpload({ form }) {
             <Button
               size="sm"
               variant="outline"
+              type="button"
+              onClick={handleDeleteClick}
             >
               <Trash />
               Delete

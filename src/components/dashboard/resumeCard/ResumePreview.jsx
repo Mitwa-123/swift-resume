@@ -46,7 +46,7 @@ export default function ResumePreview({ resume, onDuplicate }) {
           width={262}
           height={154}
           alt="resume"
-          className="border border-border rounded-sm shadow-[0_1px_2px_0_rgba(0,0,0,0.04)]"
+          className="border border-border rounded-sm shadow-[0_1px_2px_0_rgba(0,0,0,0.04)] w-full lg:w-auto"
         />
       </div>
       <div className="flex items-center justify-between p-4">

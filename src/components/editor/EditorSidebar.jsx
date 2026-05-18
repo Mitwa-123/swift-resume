@@ -37,7 +37,7 @@ export default function EditorSidebar() {
   if (!isMounted) return null;
 
   const renderContent = (
-    <div className="flex flex-col h-full  will-change-transform">
+    <div className="flex flex-col h-full will-change-transform">
       <Tabs defaultValue="tab1" className="flex flex-col h-full w-full">
         <div className="flex items-center justify-between px-4.5 py-3.5 border-b">
           <Button variant="outline" size="icon-lg">

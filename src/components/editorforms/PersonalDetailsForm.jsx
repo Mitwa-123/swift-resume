@@ -45,9 +45,9 @@ export default function PersonalDetailsForm() {
 
         <div className="flex flex-col md:flex-row gap-6">
           <div className="flex flex-col">
-            <Field className="relative flex h-30 w-30 flex-col items-center justify-center rounded-md border-2 border-dashed border-border bg-base-accent my-auto cursor-pointer">
+            <Field className="relative flex h-30 w-30 flex-col items-center justify-center rounded-md border-2 border-dashed border-border bg-base-accent my-auto">
               <FieldLabel
-                className="absolute inset-0 flex flex-col gap-1 justify-center"
+                className="absolute inset-0 flex flex-col gap-1 justify-center  cursor-pointer"
                 htmlFor="picture"
               >
                 <ImageIcon className="size-8 text-muted-foreground" />

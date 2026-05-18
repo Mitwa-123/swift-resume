@@ -38,24 +38,23 @@ export default function ResumePreview() {
   return (
     <div
       onScroll={(e) => setIsScrolled(e.target.scrollTop > 20)}
-      className="flex flex-col  pt-2 px-4 h-full overflow-y-auto relative scroll-smooth no-scrollbar"
+      className="flex flex-col  pt-2 px-4 h-full overflow-y-auto relative scroll-smooth no-scrollbar will-change-transform"
     >
 
       <div className="flex justify-center w-full sticky top-0 z-20">
         <div
-          style={{ width: `${BASE_WIDTH * scale}px`, minWidth: "fit-content" }}
+          style={{ width: `${BASE_WIDTH * scale}px`, minWidth: "fit-content"}}
         >
           <TabEditor isScrolled={isScrolled} />
         </div>
       </div>
 
-      <div ref={containerRef} className="flex justify-center w-full">
+      <div ref={containerRef} className="flex justify-center">
         <div
           className="relative origin-top transition-transform duration-75"
           style={{
             transform: `scale(${scale})`,
             width: BASE_WIDTH,
-            height: BASE_HEIGHT * scale,
           }}
         >
           <div

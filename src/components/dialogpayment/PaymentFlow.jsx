@@ -14,15 +14,11 @@ export default function PaymentFlow({ isOpen, setIsOpen }) {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 1024px)");
-
     const handleResize = (e) => {
       setIsDesktop(e.matches);
     };
-
     setIsDesktop(mediaQuery.matches);
-
     mediaQuery.addEventListener("change", handleResize);
-
     return () => {
       mediaQuery.removeEventListener("change", handleResize);
     };
